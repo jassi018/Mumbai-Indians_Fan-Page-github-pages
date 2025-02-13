@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mumbai Indians Fan Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-top: 20px;
+            padding: 20px;
+           
+        }
+
+        .main-content {
+            flex: 1;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar {
+            width: 20%;
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header {
+            background-color: #004ba0;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #00205b;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #00205b;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .ff {
+
+            color: white;
+            font-family: Arial, sans-serif;
+            background-color: #00205b;
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            padding: 10px;
+            text-decoration: none;
+        }
+
+        
+
+
+        @import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,700");
+
+*{
+  box-sizing: border-box;
+}
+
+body{
+  font-family: Arial, sans-serif;;
+}
+
+body > h1{
+  text-align: center;
+  margin: 20px;
+  margin-bottom: 0px;
+}
+
+.semicircle-infographic{
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.semicircle-infographic .center-circle{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 250px;
+  min-height: 250px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  margin-right: -125px;
+  z-index: 1;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.semicircle-infographic .center-circle .content{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 5px solid rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0px 0px 30px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+}
+
+.semicircle-infographic .center-circle .content h2{
+  margin-top: 0px;
+  margin-bottom: 5px;
+  font-size: 2rem;
+  color: #C70039;
+}
+
+.semicircle-infographic .center-circle .content p{
+  margin: 0px;
+  font-weight: bold;
+}
+
+@media (max-width: 767px){
+  .semicircle-infographic{
+    transform: scale(0.9);
+  }
+}
+
+@media (max-width: 480px){
+  .semicircle-infographic{
+    transform: scale(0.6);
+  }
+}
+
+.semi-circle-container{
+  min-width: 270px;
+  padding: 50px 0px;
+  overflow: hidden;
+  position: relative;
+}
+
+.semi-circle-container .semi-circle{
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  margin-left: -250px;
+  position: relative;
+  overflow: hidden;
+}
+
+.semi-circle-container .circle-section{
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  box-shadow: inset 0px 0px 15px rgba(0, 0, 0, 0.4);
+}
+
+.semi-circle-container .circle-section:nth-child(1){
+  background-color: #900C3E;
+  left: 250px;
+}
+
+.semi-circle-container .circle-section:nth-child(2){
+  background-color: #C70039;
+  transform: rotate(45deg) translate(50%, -50%);
+}
+
+.semi-circle-container .circle-section:nth-child(3){
+  background-color: #FF5733;
+  transform: rotate(90deg) translate(50%, -50%);
+}
+
+.semi-circle-container .circle-section:nth-child(4){
+  background-color: #ff9800;
+  transform: rotate(135deg) translate(50%, -50%);
+}
+
+.semi-circle-container .inner-circle-container{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0%;
+}
+
+.semi-circle-container .inner-circle-container .inner-circle{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90px;
+  height: 90px;
+  background: #ffffff;
+  border-radius: 50%;
+  border: 5px solid;
+  font-weight: bold;
+  font-size: 3rem;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+  transform: translate(-50%, -50%);
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.semi-circle-container .inner-circle-container .inner-circle:hover{
+  transform: translate(-50%, -50%) scale(1.2);
+}
+
+.semi-circle-container .inner-circle-container .inner-circle:nth-of-type(1){
+  left: 28%;
+  top: 12%;
+  border-color: #900C3E;
+  color: #900C3E;
+}
+
+.semi-circle-container .inner-circle-container .inner-circle:nth-of-type(2){
+  left: 79%;
+  top: 35%;
+  border-color: #C70039;
+  color: #C70039;
+}
+
+.semi-circle-container .inner-circle-container .inner-circle:nth-of-type(3){
+  left: 79%;
+  top: 66%;
+  border-color: #FF5733;
+  color: #FF5733;
+}
+
+.semi-circle-container .inner-circle-container .inner-circle:nth-of-type(4){
+  left: 28%;
+  top: 88%;
+  border-color: #ff9800;
+  color: #ff9800;
+}
+
+path {
+  fill: transparent;
+}
+
+
+
+
+</style>
+</head>
+
+<body>
+    <header>
+        <h1>MI Paltan</h1>
+
+        <a href="registerpage.html" class="ff">Sign In</a>
+
+
+    </header>
+    <nav>
+        <a href="Home.html">Home</a>
+        <a href="Squad.html">Squad</a>
+        <a href="#">Legacy</a>
+        <a href="stats.html">Stats</a>
+        <a href="merchandise.html">Merchandise</a>
+        <a href="Membership.html">Membership</a>
+        <a href="events.html">Events</a>
+        <a href="#">Our Fans</a>
+    </nav>
+
+    <div class="container">
+        <div class="main-content" style="display: flex; justify-content: space-around;">
+            
+          <div> <h1 >Batsmen</h1></div>
+
+
+                <!-- player 1 -->
+                <div class="semicircle-infographic"  style="position: relative;">
+                    <div class="center-circle">
+                    <div class="content">
+                        <img src="images/rohit.png" style="height: 200px; width: 200px;border-radius: 50%; top: 57%; " >
+                    </div>
+                    <svg viewBox="0 0 500 500" style="position: absolute; z-index: 100; top: 168px;">
+                      <path id="curve" d="M73.2,148.6c4-6.1,65.5-96.8,178.6-95.6c111.3,1.2,170.8,90.3,175.1,97" />
+                      <text width="500">
+                        <textPath xlink:href="#curve" style="font-size: xx-large;
+                        font-weight: bolder;">
+                          Rohit Sharma
+                        </textPath>
+                      </text>
+                    </svg>
+                     </div>
+                    <div class="semi-circle-container">
+                    <div class="semi-circle">
+                        <div class="circle-section">
+                        <h2 style="position: absolute; z-index: 100; top: 9%; left: 5%; color: white;"> Matches<h3 style="position: absolute; z-index: 100; top: 15%; left: 5%; color: white;">246</h3></h2>
+                        </div>
+
+                        <div class="circle-section"> 
+                            <h2 style="position: absolute; z-index: 100; top: 62%; left: 1.5%; color: white; transform: rotate(-45deg);"> Runs <h3 style="position: absolute; z-index: 100; top: 66.5%; left: 6%; color: white; transform: rotate(-45deg);">6280</h3></h2>
+                        </div>
+
+                        <div class="circle-section"> 
+                            <h2 style="position: absolute; z-index: 100; top: 63%; left: 3%; color: white; transform: rotate(-90deg);"> S/R <h3 style="position: absolute; z-index: 100; top: 63.5%; left: 6%; color: white; transform: rotate(-90deg);">130.34</h3></h2>
+                        </div>
+
+                        <div class="circle-section"> 
+                            <h2 style="position: absolute; z-index: 100; top: 65%; left: 5%; color: white; transform: rotate(-135deg);"> Avg <h3 style="position: absolute; z-index: 100; top: 61.5%; left: 9%; color: white; transform: rotate(-135deg);">29.48</h3></h2>
+                        </div>
+                    
+                    </div>
+                    <div class="inner-circle-container">
+                        <div class="inner-circle">1</div>
+                        <div class="inner-circle">2</div>
+                        <div class="inner-circle">3</div>
+                        <div class="inner-circle">4</div>
+                    </div>
+                    </div>
+                </div>
+            
+<!--player2 -->
+                <div class="semicircle-infographic">
+                  <div class="center-circle">
+                  <div class="content">
+                      <img src="images/sky.png" style="height: 200px; width: 200px;border-radius: 50%;position: absolute; z-index: 100; top: 57%; " >
+                  </div>
+
+                  <svg viewBox="0 0 500 500" style="position: absolute; z-index: 100; width: 18%;">
+                    <path id="curve" d="M73.2,148.6c4-6.1,65.5-96.8,178.6-95.6c111.3,1.2,170.8,90.3,175.1,97" />
+                    <text width="500">
+                      <textPath xlink:href="#curve" style="font-size: xx-large;
+                      font-weight: bolder;">
+                        SuryaKumar Yadav
+                      </textPath>
+                    </text>
+                  </svg>
+                  </div>
+                  <div class="semi-circle-container">
+                  <div class="semi-circle">
+                      <div class="circle-section">
+                      <h2 style="position: absolute; z-index: 100; top: 9%; left: 5%; color: white;"> Matches<h3 style="position: absolute; z-index: 100; top: 15%; left: 5%; color: white;">246</h3></h2>
+                      </div>
+
+                      <div class="circle-section"> 
+                          <h2 style="position: absolute; z-index: 100; top: 62%; left: 1.5%; color: white; transform: rotate(-45deg);"> Runs <h3 style="position: absolute; z-index: 100; top: 66.5%; left: 6%; color: white; transform: rotate(-45deg);">6280</h3></h2>
+                      </div>
+
+                      <div class="circle-section"> 
+                          <h2 style="position: absolute; z-index: 100; top: 63%; left: 3%; color: white; transform: rotate(-90deg);"> S/R <h3 style="position: absolute; z-index: 100; top: 63.5%; left: 6%; color: white; transform: rotate(-90deg);">130.34</h3></h2>
+                      </div>
+
+                      <div class="circle-section"> 
+                          <h2 style="position: absolute; z-index: 100; top: 65%; left: 5%; color: white; transform: rotate(-135deg);"> Avg <h3 style="position: absolute; z-index: 100; top: 61.5%; left: 9%; color: white; transform: rotate(-135deg);">29.48</h3></h2>
+                      </div>
+                  
+                  </div>
+                  <div class="inner-circle-container">
+                      <div class="inner-circle">1</div>
+                      <div class="inner-circle">2</div>
+                      <div class="inner-circle">3</div>
+                      <div class="inner-circle">4</div>
+                  </div>
+                  </div>
+              </div>
+
+              <!-- player 3 -->
+              <div class="semicircle-infographic"  style="position: relative;">
+                    <div class="center-circle">
+                    <div class="content">
+                        <img src="images/hardik.png" style="height: 200px; width: 200px;border-radius: 50%; top: 57%; " >
+                    </div>
+                    <svg viewBox="0 0 500 500" style="position: absolute; z-index: 100; top: 168px;">
+                      <path id="curve" d="M73.2,148.6c4-6.1,65.5-96.8,178.6-95.6c111.3,1.2,170.8,90.3,175.1,97" />
+                      <text width="500">
+                        <textPath xlink:href="#curve" style="font-size: xx-large;
+                        font-weight: bolder;">
+                          Hardik Pandya
+                        </textPath>
+                      </text>
+                    </svg>
+                     </div>
+                    <div class="semi-circle-container">
+                    <div class="semi-circle">
+                        <div class="circle-section">
+                        <h2 style="position: absolute; z-index: 100; top: 9%; left: 5%; color: white;"> Matches<h3 style="position: absolute; z-index: 100; top: 15%; left: 5%; color: white;">246</h3></h2>
+                        </div>
+
+                        <div class="circle-section"> 
+                            <h2 style="position: absolute; z-index: 100; top: 62%; left: 1.5%; color: white; transform: rotate(-45deg);"> Runs <h3 style="position: absolute; z-index: 100; top: 66.5%; left: 6%; color: white; transform: rotate(-45deg);">6280</h3></h2>
+                        </div>
+
+                        <div class="circle-section"> 
+                            <h2 style="position: absolute; z-index: 100; top: 63%; left: 3%; color: white; transform: rotate(-90deg);"> S/R <h3 style="position: absolute; z-index: 100; top: 63.5%; left: 6%; color: white; transform: rotate(-90deg);">130.34</h3></h2>
+                        </div>
+
+                        <div class="circle-section"> 
+                            <h2 style="position: absolute; z-index: 100; top: 65%; left: 5%; color: white; transform: rotate(-135deg);"> Avg <h3 style="position: absolute; z-index: 100; top: 61.5%; left: 9%; color: white; transform: rotate(-135deg);">29.48</h3></h2>
+                        </div>
+                    
+                    </div>
+                    <div class="inner-circle-container">
+                        <div class="inner-circle">1</div>
+                        <div class="inner-circle">2</div>
+                        <div class="inner-circle">3</div>
+                        <div class="inner-circle">4</div>
+                    </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+
+    <!-- players 4 5 6  -->
+    <div class="container">
+      <div class="main-content" style="display: flex; justify-content: space-around;">
+          
+              <!-- player 4 -->
+              <div class="semicircle-infographic"  style="position: relative;">
+                  <div class="center-circle">
+                  <div class="content">
+                      <img src="" style="height: 200px; width: 200px;border-radius: 50%; top: 57%; " >
+                  </div>
+                  <svg viewBox="0 0 500 500" style="position: absolute; z-index: 100; top: 168px;">
+                    <path id="curve" d="M73.2,148.6c4-6.1,65.5-96.8,178.6-95.6c111.3,1.2,170.8,90.3,175.1,97" />
+                    <text width="500">
+                      <textPath xlink:href="#curve" style="font-size: xx-large;
+                      font-weight: bolder;">
+                        Rohit Sharma
+                      </textPath>
+                    </text>
+                  </svg>
+                   </div>
+                  <div class="semi-circle-container">
+                  <div class="semi-circle">
+                      <div class="circle-section">
+                      <h2 style="position: absolute; z-index: 100; top: 9%; left: 5%; color: white;"> Matches<h3 style="position: absolute; z-index: 100; top: 15%; left: 5%; color: white;">246</h3></h2>
+                      </div>
+
+                      <div class="circle-section"> 
+                          <h2 style="position: absolute; z-index: 100; top: 62%; left: 1.5%; color: white; transform: rotate(-45deg);"> Runs <h3 style="position: absolute; z-index: 100; top: 66.5%; left: 6%; color: white; transform: rotate(-45deg);">6280</h3></h2>
+                      </div>
+
+                      <div class="circle-section"> 
+                          <h2 style="position: absolute; z-index: 100; top: 63%; left: 3%; color: white; transform: rotate(-90deg);"> S/R <h3 style="position: absolute; z-index: 100; top: 63.5%; left: 6%; color: white; transform: rotate(-90deg);">130.34</h3></h2>
+                      </div>
+
+                      <div class="circle-section"> 
+                          <h2 style="position: absolute; z-index: 100; top: 65%; left: 5%; color: white; transform: rotate(-135deg);"> Avg <h3 style="position: absolute; z-index: 100; top: 61.5%; left: 9%; color: white; transform: rotate(-135deg);">29.48</h3></h2>
+                      </div>
+                  
+                  </div>
+                  <div class="inner-circle-container">
+                      <div class="inner-circle">1</div>
+                      <div class="inner-circle">2</div>
+                      <div class="inner-circle">3</div>
+                      <div class="inner-circle">4</div>
+                  </div>
+                  </div>
+              </div>
+          
+            <!--player5 -->
+              <div class="semicircle-infographic">
+                <div class="center-circle">
+                <div class="content">
+                    <img src="" style="height: 200px; width: 200px;border-radius: 50%;position: absolute; z-index: 100; top: 57%; " >
+                </div>
+
+                <svg viewBox="0 0 500 500" style="position: absolute; z-index: 100; width: 18%;">
+                  <path id="curve" d="M73.2,148.6c4-6.1,65.5-96.8,178.6-95.6c111.3,1.2,170.8,90.3,175.1,97" />
+                  <text width="500">
+                    <textPath xlink:href="#curve" style="font-size: xx-large;
+                    font-weight: bolder;">
+                      SuryaKumar Yadav
+                    </textPath>
+                  </text>
+                </svg>
+                </div>
+                <div class="semi-circle-container">
+                <div class="semi-circle">
+                    <div class="circle-section">
+                    <h2 style="position: absolute; z-index: 100; top: 9%; left: 5%; color: white;"> Matches<h3 style="position: absolute; z-index: 100; top: 15%; left: 5%; color: white;">246</h3></h2>
+                    </div>
+
+                    <div class="circle-section"> 
+                        <h2 style="position: absolute; z-index: 100; top: 62%; left: 1.5%; color: white; transform: rotate(-45deg);"> Runs <h3 style="position: absolute; z-index: 100; top: 66.5%; left: 6%; color: white; transform: rotate(-45deg);">6280</h3></h2>
+                    </div>
+
+                    <div class="circle-section"> 
+                        <h2 style="position: absolute; z-index: 100; top: 63%; left: 3%; color: white; transform: rotate(-90deg);"> S/R <h3 style="position: absolute; z-index: 100; top: 63.5%; left: 6%; color: white; transform: rotate(-90deg);">130.34</h3></h2>
+                    </div>
+
+                    <div class="circle-section"> 
+                        <h2 style="position: absolute; z-index: 100; top: 65%; left: 5%; color: white; transform: rotate(-135deg);"> Avg <h3 style="position: absolute; z-index: 100; top: 61.5%; left: 9%; color: white; transform: rotate(-135deg);">29.48</h3></h2>
+                    </div>
+                
+                </div>
+                <div class="inner-circle-container">
+                    <div class="inner-circle">1</div>
+                    <div class="inner-circle">2</div>
+                    <div class="inner-circle">3</div>
+                    <div class="inner-circle">4</div>
+                </div>
+                </div>
+            </div>
+
+            <!-- player 6 -->
+            <div class="semicircle-infographic"  style="position: relative;">
+                  <div class="center-circle">
+                  <div class="content">
+                      <img src="" style="height: 200px; width: 200px;border-radius: 50%; top: 57%; " >
+                  </div>
+                  <svg viewBox="0 0 500 500" style="position: absolute; z-index: 100; top: 168px;">
+                    <path id="curve" d="M73.2,148.6c4-6.1,65.5-96.8,178.6-95.6c111.3,1.2,170.8,90.3,175.1,97" />
+                    <text width="500">
+                      <textPath xlink:href="#curve" style="font-size: xx-large;
+                      font-weight: bolder;">
+                        Hardik Pandya
+                      </textPath>
+                    </text>
+                  </svg>
+                   </div>
+                  <div class="semi-circle-container">
+                  <div class="semi-circle">
+                      <div class="circle-section">
+                      <h2 style="position: absolute; z-index: 100; top: 9%; left: 5%; color: white;"> Matches<h3 style="position: absolute; z-index: 100; top: 15%; left: 5%; color: white;">246</h3></h2>
+                      </div>
+
+                      <div class="circle-section"> 
+                          <h2 style="position: absolute; z-index: 100; top: 62%; left: 1.5%; color: white; transform: rotate(-45deg);"> Runs <h3 style="position: absolute; z-index: 100; top: 66.5%; left: 6%; color: white; transform: rotate(-45deg);">6280</h3></h2>
+                      </div>
+
+                      <div class="circle-section"> 
+                          <h2 style="position: absolute; z-index: 100; top: 63%; left: 3%; color: white; transform: rotate(-90deg);"> S/R <h3 style="position: absolute; z-index: 100; top: 63.5%; left: 6%; color: white; transform: rotate(-90deg);">130.34</h3></h2>
+                      </div>
+
+                      <div class="circle-section"> 
+                          <h2 style="position: absolute; z-index: 100; top: 65%; left: 5%; color: white; transform: rotate(-135deg);"> Avg <h3 style="position: absolute; z-index: 100; top: 61.5%; left: 9%; color: white; transform: rotate(-135deg);">29.48</h3></h2>
+                      </div>
+                  
+                  </div>
+                  <div class="inner-circle-container">
+                      <div class="inner-circle">1</div>
+                      <div class="inner-circle">2</div>
+                      <div class="inner-circle">3</div>
+                      <div class="inner-circle">4</div>
+                  </div>
+                  </div>
+              </div>
+      </div>
+  </div>
+
+
+    
+
+    <footer>
+        <a href="#">Stadium</a><br>
+        <a href="#">Contact us</a><br>
+        <a href="https://www.instagram.com/mumbaiindians/">Social Media Accounts</a><br>
+        &copy; 2024 Mumbai Indians Fan Page. All rights reserved.
+    </footer>
+
+</body>
+
+</html>

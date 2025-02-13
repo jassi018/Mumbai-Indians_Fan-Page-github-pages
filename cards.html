@@ -1,0 +1,63 @@
+<style>
+  /* body {
+    align-items: center;
+    background-color: black;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    margin: 0px;
+    overflow: hidden;
+    padding: 0px;
+  } */
+  #image-track{
+    display: flex;
+    gap: 2vmin;
+    position: relative;
+    justify-content: center;
+    max-width: 1200px;
+    user-select: none;
+    
+  }
+  #image-track>.image {
+    width: 350px;
+    height: 150px;
+    border-radius: 5%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    object-fit: cover;
+    object-position: 100% center;
+    transition: transform 0.5s ease;
+  }
+  
+</style>
+<html>
+
+  <div id="image-track" data-mouse-down-at="0" data-prev-percentage="0">
+
+    <img class="image" src="images/cards/pani_puri.jpg" draggable="false" />
+    <div class="text-overlay">Description of the image 1</div>
+    <img class="image" src="images/cards/sandwich.jpg" draggable="false" />
+    <div class="text-overlay ">Description of the image 2</div>
+    <img class="image" src="images/cards/pav_bhaji.jpg" draggable="false" />
+    <div class="text-overlay ">Description of the image 3</div>
+    <img class="image" src="images/cards/vadapav.jpg" draggable="false" />
+    <div class="text-overlay ">Description of the image 4</div>
+    
+  </div>
+ 
+
+<script>
+
+  document.querySelectorAll(".image").forEach(function(card) {
+    card.addEventListener("mouseover", function() {
+      card.style.transform = 'scale(1.5)';
+    });
+
+    card.addEventListener("mouseout", function() {
+      card.style.transform = 'scale(1)';
+    });
+  });
+
+</script>

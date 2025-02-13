@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mumbai Indians Fan Page</title>
+    <link rel="stylesheet" href="template.css">
+    <link rel="stylesheet" href="hamburger.css">
+    <style>
+        /* Your existing CSS styles */
+        
+
+       
+
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #d1ab3e;
+        }
+
+        /*  Overall Conatiner*/
+        #slider {
+            position: relative;
+            /* margin: 20px auto 0 auto; */
+            border-radius: 4px;
+            width: 100%;
+            height: 800px;
+            overflow: hidden;
+        }
+
+        #slider ul.image_slider_ul {
+            position: relative;
+            margin: 0;
+            padding: 0;
+            width: 400%;
+            height: 100%;
+            list-style: none;
+        }
+
+        #slider ul.image_slider_ul li {
+            position: relative;
+            display: block;
+            float: left;
+            margin: 0;
+            padding: 0;
+            width: 25%;
+            height: 100%;
+        }
+
+        #slider ul.image_slider_ul li .bgimage {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            /* background-color: #333; */
+            background-position: 100% 0%;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        /*  Indicators*/
+
+        #slider .indicator_con {
+            width: 100%;
+            height: auto;
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 0;
+            bottom: 0;
+        }
+
+        #slider .indicator_con ul.indicator {
+            width: 100%;
+            height: auto;
+            position: relative;
+            text-align: center;
+        }
+
+        #slider .indicator_con ul.indicator li {
+            position: relative;
+            list-style: none;
+            width: 20px;
+            height: 4px;
+            background-color: #fff;
+            /* border: 1px solid #fff; */
+            display: inline-block;
+            margin: 0 3px;
+            border-radius: 1.5px;
+            transition: 800ms ease-in-out;
+        }
+
+        #slider .indicator_con ul.indicator li.active {
+            background-color: #F2B206;
+        }
+
+        /*  Buttons*/
+
+        button.control_prev,
+        button.control_next {
+            position: absolute;
+            /* top: 42%; */
+            z-index: 999;
+            display: block;
+            width: 7%;
+            height: 100%;
+            background: transparent;
+            /* background: rgba(0,0,0,0.1); */
+            color: #eee;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            /* opacity: 0.8; */
+            cursor: pointer;
+        }
+
+        button.control_prev:hover,
+        button.control_next:hover {
+            opacity: 1;
+            transition: all 0.2s ease;
+            /* background-color: #fff; */
+            color: #fff;
+        }
+
+        button.control_prev {
+            border-radius: 0 4px 4px 0;
+        }
+
+        button.control_next {
+            right: 0;
+            border-radius: 4px 0 0 4px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #004BA0;
+        }
+
+        th {
+            background-color: #004BA0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <!-- <h1>MI Paltan</h1> -->
+        <a href="index.html"><img src="images/mi_logo-removebg-preview.png" style="height: 100px; margin-right: 20px;"></a>
+        
+        <marquee behavior="scroll" direction="left" scrollamount="8" style="margin-left: px; background-color: #d1ab4e;  width: 100%; height: 30px; align-content: center;">
+            <h3 style="margin: 0;">Stay tuned for live updates on the ongoing cricket matches! Catch every boundary and wicket here.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Join the MI Paltan today and experience the thrill of cricket like never before!</h3>
+        </marquee>
+    
+        <a href="Login.html" class="ff">Sign In</a>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="Squad.html">Squad</a>
+        <a href="legacy.html">Legacy</a>
+        <a href="stat1.html">Stats</a>
+        <a href="merchandise.html">Merchandise</a>
+        <a href="Membership.html">Membership</a>
+        <a href="events.html">Events</a>
+        <a href="ourfans.html">Our Fans</a>
+    
+        <div class="off-screen-menu">
+          <div class="off-screen-menu-padding">
+            <div><a href="about_us.html"><img src="images/hamburger/about us.png">About Us</a></div>
+            <hr width="100%">
+            <div><a href="contact_us.html"><img src="images/hamburger/phone.png">Contact Us</a></div>
+            <hr width="100%">
+            <div><a href="FAQs.html"><img src="images/hamburger/faq.png">FAQs</a><br></div>
+            <hr width="100%">
+            <div><a href="go_to_cart.html"><img src="images/hamburger/add-to-shopping-cart.png">Go to cart</a></div>
+            <hr width="100%">
+        
+          </div>
+        </div>
+    
+        <div class="ham-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+
+    <div id="slider">
+        <!--    Start: Buttons-->
+        <button class="control_next"><i class="fa fa-chevron-right"></i></button>
+        <button class="control_prev"><i class="fa fa-chevron-left"></i></button>
+        <!--    End: Buttons-->
+        <!--    Start: Images-->
+        <ul class="image_slider_ul">
+            <li>
+                <div class="bgimage" style="background-image: url('images/stadium/wankhede1.webp')">
+                </div>
+            </li>
+
+            <li>
+                <div class="bgimage" style="background-image: url('images/stadium/wankhede2.webp')">
+                </div>
+            </li>
+
+            <li>
+                <div class="bgimage" style="background-image: url('images/stadium/wankhede3.webp')">
+                </div>
+            </li>
+
+            <li>
+                <div class="bgimage" style="background-image: url('images/stadium/wankhede4.webp')">
+                </div>
+            </li>
+
+            <li>
+                <div class="bgimage" style="background-image: url('images/stadium/wankhede5.webp')">
+                </div>
+            </li>
+
+            <li>
+                <div class="bgimage" style="background-image: url('images/stadium/wankhede6.webp')">
+                </div>
+            </li>
+        </ul>
+        <!--    End: Images-->
+        <!--    Start: Indicators-->
+        <div class="indicator_con">
+            <ul class="indicator"></ul>
+        </div>
+        <!--    End Indicators-->
+    </div>
+
+    <div class="container">
+        <div class="main-content">
+
+
+
+            <section>
+                <div class="container">
+                    <h1>Wankhede Stadium - The Home of Mumbai Indians<br>
+                        (Indiawin Sports Private Limited)</h1>
+                    <div>
+                        <p>
+                            Built in a record time of less than six months for the India – West Indies Test in 1975 and
+                            named after the Mumbai Cricket Association’s President Barrister Seshrao Wankhede, the
+                            Wankhede stadium is now home to the Mumbai Indians. The stadium currently houses 33,000
+                            cheering fans and has played host to a number of prominent matches the 2011 ICC Cricket
+                            World Cup final, in which India defeated Sri Lanka by 6 wickets.
+                        </p>
+                        <p>
+                            The stadium has witnessed history being made within its boundaries, like Ravi Shastri
+                            hitting six sixes in one over in 1985 equalling Sir Gary Sobers’ feat and the master
+                            blaster’s 200th Test match and swansong in 2011. Some records made were that of Sunil
+                            Gavaskar (1122 runs) scoring the most number of runs followed by Sachin Tendulkar (455
+                            runs). Venkatesh Prasad (15 wickets) has taken the most wickets in this stadium followed by
+                            Anil Kumble (12 wickets) and Harbhajan Singh (9 wickets) in ODIs played here. And with it
+                            being Mumbai Indians’ home ground, it’s set to witness a few new moments of history in the
+                            foreseeable future.
+                        </p>
+                        <p>
+                            In 2010, the Wankhede Stadium underwent renovation to match the modern facilities and
+                            comfort levels of spectators, as it was going to play host for the group stage and final of
+                            2011 ICC World Cup.
+                        </p>
+                        <p>
+                            The stadium has two ends: The Garware Pavilion End and the Tata End. And a number of stands
+                            like the Sunil Gavaskar Stand, the North Stand, the Vijay Merchant Stand, the Sachin
+                            Tendulkar Stand, the MCA Stand, the Vitthal Divecha Stand, the Garware Stand and the Grand
+                            Stand.
+                        </p>
+                        <table>
+                            <tr>
+                                <th>Address</th>
+                                <th>Capacity</th>
+                                <th>Height</th>
+                                <th>Opened</th>
+                                <th>Owner</th>
+                                <th>Architect</th>
+                            </tr>
+                            <tr>
+                                <td>D Rd, Churchgate, Mumbai, Maharashtra 400020, India</td>
+                                <td>33,108</td>
+                                <td>29m</td>
+                                <td>January 23rd, 1975</td>
+                                <td>Mumbai Cricket Association</td>
+                                <td>Shashi Prabhu</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+   
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+
+
+        <footer>
+            <a href="stadium.html">Stadium</a><br>
+            <a href="contact_us.html">Contact us</a><br>
+            <a href="https://www.instagram.com/mumbaiindians/">Social Media Accounts</a><br>
+            &copy; 2024 Mumbai Indians Fan Page. All rights reserved.
+        </footer>
+
+        <script>
+            $(document).ready(function () {
+
+                var slideCount = $('#slider ul.image_slider_ul li').length;
+                var slideWidth = $('#slider ul.image_slider_ul li').width();
+                var slideHeight = $('#slider ul.image_slider_ul li').height();
+                var sliderUlWidth = slideCount * slideWidth;
+
+                $('#slider ul.image_slider_ul').css({ marginLeft: - slideWidth });
+
+                $('#slider ul.image_slider_ul li:last-child').prependTo('#slider ul.image_slider_ul');
+
+                function moveLeft() {
+                    $('#slider ul.image_slider_ul').animate({
+                        left: + slideWidth
+                    }, 600, function () {
+                        $('#slider ul.image_slider_ul li:last-child').prependTo('#slider ul.image_slider_ul');
+                        $('#slider ul.image_slider_ul').css('left', '');
+                    });
+                };
+
+                function moveRight() {
+                    $('#slider ul.image_slider_ul').animate({
+                        left: - slideWidth
+                    }, 600, function () {
+                        $('#slider ul.image_slider_ul li:first-child').appendTo('#slider ul.image_slider_ul');
+                        $('#slider ul.image_slider_ul').css('left', '');
+                    });
+                };
+
+                var navDots = [];
+
+                for (var i = 0; i < slideCount; i++) {
+                    navDots[i] = '<li currentSlide="' + i + '"></li>';
+                    $('.indicator').append(navDots[i]);
+                }
+
+
+                var count = 0;
+                $("ul.indicator li").eq(count).addClass("active");
+
+
+                slideCountforindicators = slideCount - 1;
+                $('button.control_prev').click(function () {
+                    moveLeft();
+
+                    $("ul.indicator li").eq(count).removeClass("active");
+                    count--;
+                    if (count < 0) {
+                        count = slideCountforindicators;
+                    }
+
+                    $("ul.indicator li").eq(count).addClass('active');
+                });
+
+                $('button.control_next').click(function () {
+                    moveRight();
+
+                    $("ul.indicator li").eq(count).removeClass("active");
+                    count++;
+                    if (count > slideCountforindicators) {
+                        count = 0;
+
+                    }
+
+                    $("ul.indicator li").eq(count).addClass('active');
+                });
+
+                //   Automatic Slider
+
+                setInterval(function () {
+
+                    if ($('#slider').is(':hover')) {
+
+                    } else {
+                        moveRight();
+                        $("ul.indicator li").eq(count).removeClass("active");
+                        count++;
+                        if (count > slideCountforindicators) {
+                            count = 0;
+
+                        }
+
+                        $("ul.indicator li").eq(count).addClass('active');
+                    }
+                }, 4000);
+
+            });
+
+        </script>
+
+        <script src="hamburger.js"></script>
+
+</body>
+
+</html>

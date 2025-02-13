@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mumbai Indians Fan Page</title>
+  <link rel="stylesheet" type="text/css"
+    href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="template.css">
+  <link rel="stylesheet" href="hamburger.css">
+
+
+  <style>
+    * {
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    body{
+      background-image: url('images/eventimages/archive_bg.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+
+  
+
+    .container1 {
+      margin-top: 10px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-image: url('images/eventimages/event_bg_3.png');
+      background-size: cover;
+      background-position: center;
+      /* background-color: rgba(255, 255, 255, 0.1); Transparent white background */
+      
+     
+    }
+
+    #images {
+      width: 800px;
+      height: 700px;
+      overflow: hidden;
+
+    }
+
+    #images ul {
+      width: 4000px;
+      list-style-type: none;
+      padding: 0;
+
+    }
+
+    #images ul li {
+      float: left;
+      width: 800px;
+      height: 450px;
+
+    }
+
+
+    #images img {
+      width: 100%;
+      height: 650px;
+
+    }
+
+    /*Buttons*/
+    .buttons {
+      width: 800px;
+      height: 450px;
+      position: absolute;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 100px;
+      padding: 0 20px;
+    }
+
+    .buttons a {
+      text-decoration: none;
+    }
+
+    .buttons i {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 50px;
+      height: 50px;
+      background: #333;
+      color: #fff;
+      font-size: 24px;
+      opacity: 0.8;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    /*Controls*/
+    .controls {
+      width: 800px;
+      height: 50px;
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  
+      bottom: 0;
+      color: blue;
+    }
+
+    .controls i {
+      padding: 5px;
+      cursor: pointer;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .jumbotron {
+      color: #2c3e50;
+      background: #ecf0f1;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+    }
+
+
+    /*------------------------------------*\
+    photo-gallary sec6
+\*------------------------------------*/
+    .photo-gallary {
+      padding: 50px 0 50px 0;
+    }
+
+    .photo-gallary-header {
+      margin-bottom: 65px;
+    }
+
+    .photo-gallary-mosaic-image-conatainer {
+      background: whitesmoke;
+      width: 100%;
+      padding: 0px;
+      margin: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(calc(9vw + 9vh), 1fr));
+      grid-auto-rows: 150px;
+      grid-gap: 10px;
+      grid-auto-flow: dense;
+
+    }
+
+    .photo-gallary-mosaic-child {
+      overflow: hidden;
+    }
+
+    .photo-gallary-mosaic-child img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      -o-object-fit: cover;
+      object-fit: cover;
+      overflow: hidden;
+      -o-object-position: center;
+      object-position: center;
+      -webkit-transition: -webkit-filter .3s;
+      transition: -webkit-filter .3s;
+      transition: filter .3s;
+      transition: filter .3s, -webkit-filter .3s;
+      border-radius: 3px;
+      -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+      box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+      -webkit-transition: -webkit-transform .5s;
+      transition: -webkit-transform .5s;
+      transition: transform .5s;
+      transition: transform .5s, -webkit-transform .5s;
+      /* Animation */
+
+    }
+
+    .photo-gallary-mosaic-child:hover img {
+      -webkit-transform: scale(1.2);
+      transform: scale(1.2);
+
+    }
+
+    .photo-gallary-mosaic-child:nth-child(1) {
+      grid-column-start: span 2;
+      grid-row-start: span 2;
+    }
+
+    .photo-gallary-mosaic-child:nth-child(5) {
+      grid-column-start: span 2;
+    }
+
+    .photo-gallary-mosaic-child:nth-child(4) {
+      grid-row-start: span 2;
+    }
+
+    .photo-gallary-mosaic-child:nth-child(7) {
+      grid-column-start: span 2;
+    }
+
+    .photo-gallary-mosaic-image-conatainer {
+      margin-bottom: 50px;
+    }
+
+    .photo-gallary a {
+      padding: 15px 25px;
+    }
+
+    @media screen and (max-width: 370px) {
+      .photo-gallary {
+        padding: 50px 0;
+      }
+
+      .photo-gallary-header {
+        margin-bottom: 50px;
+      }
+
+      .photo-gallary-mosaic-image-conatainer {
+        margin-bottom: 25px;
+      }
+
+      .photo-gallary a {
+        padding: 15px 25px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <!-- <h1>MI Paltan</h1> -->
+    <a href="index.html"><img src="images/mi_logo-removebg-preview.png" style="height: 100px; margin-right: 20px;"></a>
+
+    <marquee behavior="scroll" direction="left" scrollamount="8"
+      style="margin-left: px; background-color: #d1ab4e;  width: 100%; height: 30px; align-content: center;">
+      <h3 style="margin: 0;">Stay tuned for live updates on the ongoing cricket matches! Catch every boundary and wicket here.</h3>
+    </marquee>
+
+    <a href="Login.html" class="ff">Sign In</a>
+  </header>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="Squad.html">Squad</a>
+    <a href="legacy.html">Legacy</a>
+    <a href="stat1.html">Stats</a>
+    <a href="merchandise.html">Merchandise</a>
+    <a href="Membership.html">Membership</a>
+    <a href="events.html">Events</a>
+    <a href="ourfans.html">Our Fans</a>
+
+    <div class="off-screen-menu">
+      <div class="off-screen-menu-padding">
+        <div><a href="about_us.html"><img src="images/hamburger/about us.png">About Us</a></div>
+        <hr width="100%">
+        <div><a href="contact_us.html"><img src="images/hamburger/phone.png">Contact Us</a></div>
+        <hr width="100%">
+        <div><a href="FAQs.html"><img src="images/hamburger/faq.png">FAQs</a><br></div>
+        <hr width="100%">
+        <div><a href="go_to_cart.html"><img src="images/hamburger/add-to-shopping-cart.png">Go to cart</a></div>
+        <hr width="100%">
+      </div>
+    </div>
+
+    <div class="ham-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+
+  <div class="container1">
+
+    <div id="carousel">
+      <div class="buttons">
+        <a href="#" class="prev"><i class="fa fa-chevron-left"></i></a>
+        <a href="#" class="next"><i class="fa fa-chevron-right"></i></a>
+      </div>
+      <div class="controls">
+        <i class="fa fa-circle" data-slide-to="1"></i>
+        <i class="fa fa-circle-o" data-slide-to="2"></i>
+        <i class="fa fa-circle-o" data-slide-to="3"></i>
+        <i class="fa fa-circle-o" data-slide-to="4"></i>
+        <i class="fa fa-circle-o" data-slide-to="5"></i>
+        <i class="fa fa-circle-o" data-slide-to="6"></i>
+
+      </div>
+      <div id="images">
+        <ul>
+          <li><img src="images/eventimages/mi_vs_gt.png" alt="Image 1"></li>
+          <li><img src="images/eventimages/mi_vs_csk.png" alt="Image 2"></li>
+          <li><img src="images/eventimages/mi_vs_rr.png" alt="Image 3"></li>
+          <li><img src="images/eventimages/mi_vs_dc.png" alt="Image 4"></li>
+          <li><img src="images/eventimages/q&a poster_20240404_212236_0000.png" alt="Image 5"></li>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- Image gallary -->
+
+  <div class="container">
+    <div class="jumbotron">
+      <h1>
+        <i class="fa fa-camera-retro" aria-hidden="true"></i>
+        MI Paltan Watchalong Gallery
+      </h1><br>
+      <p>  Moments in Motion</p>
+      <p>
+        Explore our MI Paltan Watchalong Gallery, where cherished moments from our past watchalong events come to life. Relive the excitement, camaraderie, and joy of sharing memorable matches together with fellow fans!!
+      </p>
+    </div>
+
+
+
+
+    <section class="photo-gallary sec6 cenC">
+
+      <div class="photo-gallary-mosaic-image-conatainer">
+        <div id="img1" class="photo-gallary-mosaic-child">
+          <img src="images/eventimages/watch1.webp" alt="">
+        </div>
+        <div id="img2" class="photo-gallary-mosaic-child">
+          <img src="images/eventimages/watch2.jpg" alt="">
+        </div>
+        <div id="img3" class="photo-gallary-mosaic-child">
+          <img src="images/eventimages/watch4.jpg" alt="">
+        </div>
+        <div id="img4" class="photo-gallary-mosaic-child">
+          <img src="images/eventimages/watch6.jpg" alt="">
+        </div>
+        <div id="img5" class="photo-gallary-mosaic-child">
+          <img src="images/eventimages/watch3.jpeg" alt="">
+        </div>
+        <div id="img6" class="photo-gallary-mosaic-child">
+          <img src="images/eventimages/watch8.png" alt="">
+        </div>
+        <div id="img7" class="photo-gallary-mosaic-child">
+          <img src="images/eventimages/watch5.jpeg" alt="">
+        </div>
+        <div id="img8" class="photo-gallary-mosaic-child">
+          <img src="images/eventimages/watch7.webp" alt="">
+        </div>
+        <div id="img9" class="photo-gallary-mosaic-child">
+          <img src="images/eventimages/watch9.jpg" alt="">
+        </div>
+        <div id="img7" class="photo-gallary-mosaic-child">
+          <img src="images/eventimages/watch10.jpg" alt="">
+        </div>
+        <div id="img8" class="photo-gallary-mosaic-child">
+          <img src="images/eventimages/watch11.avif" alt="">
+        </div>
+        <div id="img9" class="photo-gallary-mosaic-child">
+          <img src="images/eventimages/watch12.png" alt="">
+        </div>
+        <div id="img10" class="photo-gallary-mosaic-child">
+          <img src="images/eventimages/watch13.jpg" alt="">
+        </div>
+        <div id="img10" class="photo-gallary-mosaic-child">
+          <img src="images/eventimages/watch14.avif" alt="">
+        </div>
+        
+        
+      </div>
+    </section>
+  </div>
+
+
+
+
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="carousel.js"></script>
+
+
+
+
+
+  <footer>
+    <a href="stadium.html">Stadium</a><br>
+    <a href="contact_us.html">Contact us</a><br>
+    <a href="https://www.instagram.com/mumbaiindians/">Social Media Accounts</a><br>
+    &copy; 2024 Mumbai Indians Fan Page. All rights reserved.
+  </footer>
+
+
+  <script src="hamburger.js"></script>
+
+
+
+
+
+</body>
+
+</html>

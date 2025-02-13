@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mumbai Indians Fan Page</title>
+    <style>
+        /* Your existing CSS styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+        }
+        .container {
+            
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-top: 20px;
+            padding: 20px;
+            /* overflow: hidden; Prevent overflow of child elements */
+        }
+        .main-content {
+            background-color: #fff;
+            padding: 0px;
+            /* border-radius: 8px; */
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .sidebar {
+            width: 20%;
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        header {
+            background-color: #004ba0;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            position: relative; /* Position for the sign-in link */
+        }
+        .ff {
+            color: white;
+            font-family: Arial, sans-serif;
+            background-color: #00205b;
+            padding: 10px;
+            text-decoration: none;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 20px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+        .ff:hover {
+            background-color: #0056b3;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #00205b;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #ffc107;
+        }
+        section {
+            padding: 20px;
+        }
+        footer {
+            background-color: #00205b;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            margin-top: 20px;
+        }
+        footer a {
+            color: white; /* Change link color to white */
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        footer a:hover {
+            color: #ffc107;
+        }
+
+        .off-screen-menu{
+            background-color: #d1ab3e;
+
+            width: 90%;
+            max-width: 150px;
+            position: fixed;
+            top: 189px;
+            margin-left: 600px;
+            height: 0;
+            overflow: hidden;
+            
+            display: flex;
+            flex-direction:column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            transition: .5s ease;
+        }
+
+        .off-screen-menu.active{
+            height: 150px;
+        }
+
+        .ham-menu{
+            height: 50px;
+            width: 50px;
+            margin-left: 10px;
+            position: relative;
+        }
+
+        .ham-menu span{
+            height: 4px;
+            width: 75%;
+            background-color: #fff;
+            border-radius: 25px;
+            position: absolute;
+            top: 50%;
+            
+            transform: translate(-50%, -50%);
+            transition: .3s ease;
+        }
+
+        .ham-menu span:nth-child(1){
+            top: 25%;
+        }
+        
+        .ham-menu span:nth-child(3){
+            top: 75%;
+        }
+
+        .ham-menu.active span:nth-child(1){
+            top: 50%;
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+
+        .ham-menu.active span:nth-child(2){
+            opacity: 0;
+        }
+
+        .ham-menu.active span:nth-child(3){
+            top: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
+
+
+        #bettingOptions {
+        display: flex;
+        justify-content: space-around;
+       }
+
+       .bettingOption h2{
+        margin: 20% 0;
+       }
+    
+      .bettingOption {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin: 10px;
+        width: 200px;
+        text-align: center;
+      }
+
+      .bettingOption img {
+        position: absolute;
+        height: 120px;
+        /* align-self: center; */
+        /* box-shadow: 2px 2px 2px 2px black;  */
+        transform: translate(-50%,-80px);
+      }
+    
+      button {
+        margin-top: 5px;
+      }
+      
+  
+      #cashOutBtn{
+        position: absolute;
+        left: 50%;
+        top: 64%;
+      }
+      #displayBet{
+       position: absolute;
+       left: 48%;
+       top: 58%;
+      }
+
+    /*  #prob{
+        width: 34%;
+    height: 10px;
+    background-color: #007bff;
+    
+    position: absolute;
+    left: 33%;
+      }*/
+
+      #prob {
+  width: 34%;
+  height: 10px;
+  background-color: #f2f2f2;
+  position: relative;
+  margin: 20px auto;
+  bottom: -25px;
+}
+
+.team1, .team2 {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  line-height: 20px;
+}
+
+.team1 {
+  background-color: #007bff;
+  color: white;
+  left: 0;
+  overflow: hidden;
+  border-radius: 4px 0 0 4px ;
+}
+
+.team2 {
+  background-color: hsl(0, 80%, 46%);
+  color: white;
+  right: 0;
+  overflow: hidden;
+  border-radius: 0 4px 4px 0;
+}
+.percentage {
+  position: absolute;
+  top: -20px; /* Adjust this value to change the distance between the percentages and the probability line */
+  width: 100%;
+}
+
+@font-face {
+    font-family: groot;
+    src: url("C:\\Users\\Sanved\\OneDrive\\Desktop\\WEBD_google drive\\images\\81343247479.jpg");
+}
+
+.goot{
+    background-image: url("images/betting/stadium.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+
+}
+
+
+
+
+        
+/* .ham {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 400ms;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin-right: 10px; /* Add margin to separate the hamburger menu from navigation links 
+
+
+.hamRotate.active {
+  transform: rotate(45deg);
+}
+.hamRotate180.active {
+  transform: rotate(180deg);
+}
+.line {
+  fill:none;
+  transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+  stroke:#fff;
+  stroke-width:3;
+  stroke-linecap:round;
+}
+.ham1 .top {
+  stroke-dasharray: 40 139;
+}
+.ham1 .bottom {
+  stroke-dasharray: 40 180;
+}
+.ham1.active .top {
+  stroke-dashoffset: -98px;
+}
+.ham1.active .bottom {
+  stroke-dashoffset: -138px;
+} */
+
+        
+    </style>
+</head>
+<body>
+    <header>
+        <h1>MI Paltan</h1>
+        
+        <a href="Login.html" class="ff">Sign In</a>
+        
+        
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="Squad.html">Squad</a>
+        <a href="legacy.html">Legacy</a>
+        <a href="stat1.html">Stats</a>
+        <a href="merchandise.html">Merchandise</a>
+        <a href="Membership.html">Membership</a>
+        <a href="events.html">Events</a>
+        <a href="ourfans.html">Our Fans</a>
+
+        <div class="off-screen-menu">
+            <ul>
+                <a href="#">About Us</a><br>
+                <a href="#">Contact Us</a><br>
+                <a href="#">FAQs</a><br>
+                <a href="#">Go to cart</a><br>
+                <a href="#">Feedback</a><br>
+            </ul>
+        </div>
+
+        <div class="ham-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <!-- hamburger
+        <svg class="ham hamRotate ham1" viewBox="0 0 100 100" width="80" onclick="this.classList.toggle('active')">
+            <path
+                  class="line top"
+                  d="m 30,33 h 40 c 0,0 9.044436,-0.654587 9.044436,-8.508902 0,-7.854315 -8.024349,-11.958003 -14.89975,-10.85914 -6.875401,1.098863 -13.637059,4.171617 -13.637059,16.368042 v 40" />
+            <path
+                  class="line middle"
+                  d="m 30,50 h 40" />
+            <path
+                  class="line bottom"
+                  d="m 30,67 h 40 c 12.796276,0 15.357889,-11.717785 15.357889,-26.851538 0,-15.133752 -4.786586,-27.274118 -16.667516,-27.274118 -11.88093,0 -18.499247,6.994427 -18.435284,17.125656 l 0.252538,40" />
+        </svg> -->
+          
+          
+          
+          
+    </nav>
+    <div class="container"  >
+        <div class="main-content">
+            <section style="font-family: groot;" class="goot">
+               <h1 style="text-align: center;"> Mumbai Indians vs Royal Challengers Bangalore</h1>
+                <div id="prob" style="border: 3.15px solid black; border-radius: 8px;">
+                    <div class="percentage" style="text-align: left;">70%</div>
+                    <div class="team1" style="width: 70%;"></div>
+                    <div class="percentage" style="text-align: right;">30%</div>
+                    <div class="team2" style="width: 30%;"></div>
+                  </div>
+                  
+                <div class="container" >
+                <div id="bettingOptions" >
+                    
+                    <div id="teamMI" class="bettingOption" style="backdrop-filter: blur(3px); border-radius: 8px;">
+                        <img src="images/betting/MI.png" alt="">
+                        <h2>Mumbai Indians</h2>
+                        <div style="margin-top: 78px;">
+                            <label for="amountMI">Bet Amount:</label>
+                        <input type="number" id="amountMI" min="1">
+                        <button onclick="placeBet('MI')">Place Bet</button>
+                        </div>
+                    </div>
+            
+                    <div>
+                      <div>  <h1 id="displayBet">Bet placed : 0</h1></div>
+                       <div> <button id="cashOutBtn" onclick="cashOut()">Cash Out</button></div>
+            
+                    </div>
+            
+                    <div id="teamRCB" class="bettingOption"  style="backdrop-filter: blur(3px); border-radius: 8px;">
+                        <img src="images/betting/RCB.png" alt="">
+                        <h2>Royal Challengers Bangalore</h2>
+                        <label for="amountRCB">Bet Amount:</label>
+                        <input type="number" id="amountRCB" min="1">
+                        <button onclick="placeBet('RCB')">Place Bet</button>
+                    </div>
+                </div>
+            </div>
+            </section>
+        </div>
+       
+    </div>
+
+    <footer style="position: absolute;">
+        <a href="stadium.html">Stadium</a><br>
+        <a href="#">Contact us</a><br>
+        <a href="https://www.instagram.com/mumbaiindians/">Social Media Accounts</a><br>
+        &copy; 2024 Mumbai Indians Fan Page. All rights reserved.
+    </footer>
+
+    <script>
+        let bets = {
+    MI: 0,
+    RCB: 0
+};
+
+function placeBet(team) {
+    const amountInput = document.getElementById(`amount${team}`);
+    const bet = document.getElementById('displayBet');
+    const amount = parseInt(amountInput.value);
+
+    bet.innerHTML = `Bet placed : ${amount}`
+    
+    if (amount <= 0 || isNaN(amount)) {
+        alert("Please enter a valid amount.");
+        return;
+    }
+    
+    bets[team] += amount;
+    alert(`Bet placed on ${team} for ₹${amount}. Total bet amount on ${team}: ₹${bets[team]}`);
+    
+    // Reset input field
+    amountInput.value = "";
+}
+
+function cashOut() {
+
+    const bet = document.getElementById('displayBet');
+
+     bet.innerHTML = `Bet placed : 0`
+
+    const totalBetMI = bets.MI;
+    const totalBetRCB = bets.RCB;
+
+    const cashOutAmountMI = totalBetMI * 0.9; // Example: 90% of total bet amount
+    const cashOutAmountRCB = totalBetRCB * 0.8; // Example: 80% of total bet amount
+
+    alert(`Cash out amount for Mumbai Indians: ₹${cashOutAmountMI}\nCash out amount for Royal Challengers Bangalore: ₹${cashOutAmountRCB}`);
+
+    
+
+    // Reset bets
+    bets.MI = 0;
+    bets.RCB = 0;
+}
+
+    </script>

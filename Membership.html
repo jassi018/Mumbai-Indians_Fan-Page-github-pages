@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mumbai Indians Fan Page</title>
+    <link rel="stylesheet" href="template.css">
+    <link rel="stylesheet" href="hamburger.css">
+    <style>
+     
+        .membership {
+            padding: 20px;
+            text-align: center;
+            overflow-x: auto; /* Add horizontal scroll if necessary */
+        }
+        .membership table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 2px solid #004BA0; /* Add border to the table */
+        }
+        .membership th,
+        .membership td {
+            padding: 15px; /* Adjusted padding */
+            border: 1px solid #004BA0; /* Add border to table cells */
+        }
+        .membership th {
+            background-color: #004BA0;
+            color: #fff;
+        }
+
+    #Image-track{
+    display: flex;
+    gap: 4vmin;
+    position: relative;
+    justify-content: center;
+    max-width: 1200px;
+    user-select: none;
+    
+  }
+  #Image-track>.image {
+    width: 350px;
+    height: 200px;
+    border-radius: 5%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    object-fit: cover;
+    object-position: 100% center;
+    transition: transform 0.5s ease;
+  }
+  
+
+  .m-body{
+    align-items: center;
+    background-color: #000080;
+    display: flex;
+    height: 50vh;
+    justify-content: center;
+    margin: 0px;
+    overflow: hidden;
+    padding: 0px;
+
+  }
+
+
+  .Image-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.Image-container {
+    width: 25%; /* Adjust the width as needed */
+    text-align: center;
+}
+
+.Image-container img {
+    max-width: 80%;
+    height: auto;
+    border-radius: 5%;
+
+}
+
+.description {
+    margin-top: 10px;
+    color: black; /* Adjust color as needed */
+    font-size: 20px; /* Adjust font size as needed */
+    text-align: left;
+}
+
+.buy-button {
+    background-color: #d1ab3e;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.buy-button:hover {
+    background-color: #b18b26;
+}
+
+
+
+</style>
+
+</head>
+<body>
+    <header>
+        <!-- <h1>MI Paltan</h1> -->
+        <a href="index.html"><img src="images/mi_logo-removebg-preview.png" style="height: 100px; margin-right: 20px;"></a>
+        
+        <marquee behavior="scroll" direction="left" scrollamount="8" style="margin-left: px; background-color: #d1ab4e;  width: 100%; height: 30px; align-content: center;">
+            <h3 style="margin: 0;">Stay tuned for live updates on the ongoing cricket matches! Catch every boundary and wicket here.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Join the MI Paltan today and experience the thrill of cricket like never before!</h3>
+        </marquee>
+        
+        <a href="Login.html" class="ff">Sign In</a>
+    </header>
+    
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="Squad.html">Squad</a>
+        <a href="legacy.html">Legacy</a>
+        <a href="stat1.html">Stats</a>
+        <a href="merchandise.html">Merchandise</a>
+        <a href="Membership.html">Membership</a>
+        <a href="events.html">Events</a>
+        <a href="ourfans.html">Our Fans</a>
+    
+        <div class="off-screen-menu">
+          <div class="off-screen-menu-padding">
+            <div><a href="about_us.html"><img src="images/hamburger/about us.png">About Us</a></div>
+            <hr width="100%">
+            <div><a href="contact_us.html"><img src="images/hamburger/phone.png">Contact Us</a></div>
+            <hr width="100%">
+            <div><a href="FAQs.html"><img src="images/hamburger/faq.png">FAQs</a><br></div>
+            <hr width="100%">
+            <div><a href="go_to_cart.html"><img src="images/hamburger/add-to-shopping-cart.png">Go to cart</a></div>
+            <hr width="100%">
+          </div>
+        </div>
+    
+        <div class="ham-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+
+      <section style="text-align: center;font-size: larger; background-color: #DFF5FF;">
+        <h1>Welcome to MI Paltan</h1> <h1 style="color: #d1ab3e ;">Membership </h1>
+    </section>
+
+    <section class="m-body">
+
+        <div id="Image-track" data-mouse-down-at="0" data-prev-percentage="0">
+
+            <img class="image" src="images/cards/vadapav.jpg" draggable="false" data-target="vada-pav-section" />
+            <img class="image" src="images/cards/pav_bhaji.jpg" draggable="false" data-target="pav-bhaji-section" />
+            <img class="image" src="images/cards/sandwich.jpg" draggable="false" data-target="sandwich-section" />
+            <img class="image" src="images/cards/pani_puri.jpg" draggable="false" data-target="pani-puri-section" />
+            
+        </div>
+    </section>
+
+
+    <section class="Image-section" id="vada-pav-section">
+        <div class="Image-container">
+            <img src="images/cards/vadapav.jpg" alt="Image 1">
+            <h1>Vada Pav Membership</h1>
+            <p><h2 style="color: #d1ab3e; ">₹1,299</h2></p>
+            <div class="description">
+                
+                <ul>
+                    <li>
+                        Personalised MI Paltan Vada Pav Membership card
+                    </li>
+                    <li>
+                        MI Regal Blue Monarch Jersey (Personalise your jersey with an additional cost of ₹150)
+                    </li>
+                    <li>
+                        20% discount on MI Paltan Merchandise
+                    </li>
+                    <li>
+                        Exclusive access to events and extra 10% discounts on events
+                    </li>
+                    <li>
+                        MI stickers, MI Paltan Kit and access to live chats with mentors, coaches and players
+                    </li>
+                
+                </ul>
+            </div>
+            <button class="buy-button">Buy Now</button>
+        </div>
+        
+    </section>
+
+    <section class="Image-section" id="pav-bhaji-section" style="background-color: #D3D3D3">
+        <div class="Image-container">
+            <img src="images/cards/pav_bhaji.jpg" alt="Image 1">
+            <h1>Pav Bhaji Membership</h1>
+            <p><h2 style="color: #d1ab3e; ">₹899</h2></p>
+            <div class="description">
+                
+                <ul>
+                    <li>
+                        Personalised MI Paltan Pav Bhaji Membership card
+                    </li>
+                    <li>
+                        MI Golden Gladiator Jersey (Personalise your jersey with an additional cost of ₹150)
+                    </li>
+                    <li>
+                        15% discount on MI Paltan Merchandise
+                    </li>
+                    <li>
+                        Exclusive access to events and extra 5% discounts on events
+                    </li>
+                    <li>
+                        MI stickers and access to live chats with mentors, coaches and players
+                    </li>
+                
+                </ul>
+            </div>
+            <button class="buy-button">Buy Now</button>
+        </div>
+        
+    </section>
+
+    <section class="Image-section"  id="sandwich-section">
+        <div class="Image-container">
+            <img src="images/cards/sandwich.jpg" alt="Image 1">
+            <h1>Bombay Sandwich Membership</h1>
+            <p><h2 style="color: #d1ab3e; ">₹599</h2></p>
+            <div class="description">
+                
+                <ul>
+                    <li>
+                        Personalised MI Paltan Bombay Sandwich Membership card
+                    </li>
+                    <li>
+                        Royal Majesty Cap                   
+                    </li>
+                    <li>
+                        10% discount on MI Paltan Merchandise
+                    </li>
+                    <li>
+                        Exclusive access to events 
+                    </li>
+                    <li>
+                        MI Badges and stickers 
+                    </li>
+                
+                </ul>
+            </div>
+            <button class="buy-button">Buy Now</button>
+        </div>
+        
+    </section>
+
+
+    <section class="Image-section" id="pani-puri-section" style="background-color: #D3D3D3">
+        <div class="Image-container">
+            <img src="images/cards/pani_puri.jpg" alt="Image 1">
+            <h1>Pani Puri Membership</h1>
+            <p><h2 style="color: #d1ab3e; ">₹299</h2></p>
+            <div class="description">
+                
+                <ul>
+                    <li>
+                        Personalised MI Paltan Pani Puri Membership card
+                    </li>
+                    <li>
+                        MI Blue Blitz Coasters
+                    </li>
+                    <li>
+                        5% discount on MI Paltan Merchandise
+                    </li>
+                    <li>
+                        Exclusive access to events 
+                    </li>
+                    <li>
+                        MI Badges and stickers 
+                    </li>
+                
+                </ul>
+            </div>
+            <button class="buy-button">Buy Now</button>
+        </div>
+        
+    </section>
+
+
+
+
+    <section class="membership">
+        <h2 style="text-align: center;">Membership Levels</h2>
+        <table>
+            <tr>
+                <th>Benefits</th>
+                <th>Pani Puri</th>
+                <th>Bombay Sandwich</th>
+                <th>Pav Bhaji</th>
+                <th>Vada Pav</th>
+            </tr>
+            <tr>
+                <td>Discounts</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            <tr style="background-color: lightgray;">
+                <td>Ticket Discount (Events)</td>
+                <td>❌</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            <tr>
+                <td>MI Stickers</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            <tr style="background-color: lightgray;">
+                <td>MI Kit</td>
+                <td>❌</td>
+                <td>❌</td>
+                <td>❌</td>
+                <td>✔</td>
+            </tr>
+            <tr>
+                <td>Live Chat</td>
+                <td>❌</td>
+                <td>❌</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            
+        </table>
+    </section>
+    
+
+
+    <footer>
+        <!-- Footer content -->
+        <a href="stadium.html">Stadium</a><br>
+        <a href="contact_us.html">Contact us</a><br>
+        <a href="https://www.instagram.com/mumbaiindians/">Social Media Accounts</a><br>
+        &copy; 2024 Mumbai Indians Fan Page. All rights reserved.
+    </footer>
+
+
+    <script>
+
+        document.querySelectorAll(".image").forEach(function(card) {
+          card.addEventListener("mouseover", function() {
+            card.style.transform = 'scale(1.3)';
+          });
+      
+          card.addEventListener("mouseout", function() {
+            card.style.transform = 'scale(1)';
+          });
+        });
+      
+    
+
+
+
+    document.querySelectorAll(".image").forEach(function(card) {
+        card.addEventListener("click", function() {
+            const targetId = card.dataset.target;
+            const targetSection = document.getElementById(targetId);
+            targetSection.scrollIntoView({ behavior: "smooth" });
+        });
+    });
+
+
+    document.querySelectorAll(".buy-button").forEach(button => {
+    button.addEventListener("click", () => {
+        window.location.href = "go_to_cart.html";
+    });
+});
+
+
+
+    
+
+</script>
+
+<script src="hamburger.js"></script>
+
+
+
+</body>
+</html>

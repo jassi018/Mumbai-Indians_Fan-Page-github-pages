@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MI Paltan Recruitment</title>
+<style>
+  body {
+ font-family: Arial, sans-serif;
+ margin: 0;
+ padding: 0;
+ background-color: #f0f0f0;
+}
+.container {
+ display: flex;
+ justify-content: space-between;
+ align-items: flex-start;
+ margin-top: 20px;
+ padding: 20px;
+}
+.main-content {
+ flex: 1;
+ background-color: #fff;
+ padding: 20px;
+ border-radius: 10px;
+ box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.sidebar {
+ width: 20%;
+ background-color: #007bff;
+ color: #fff;
+ padding: 20px;
+ border-radius: 10px;
+ box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+header {
+ background-color: #004ba0;
+ color: #fff;
+ padding: 20px;
+ text-align: center;
+}
+nav {
+ background-color: #00205b;
+ color: #fff;
+ padding: 10px;
+ text-align: center;
+}
+nav a {
+ color: #fff;
+ text-decoration: none;
+ margin: 0 10px;
+}
+section {
+ padding: 20px;
+}
+footer {
+ background-color: #00205b;
+ color: #fff;
+ padding: 10px;
+ text-align: center;
+ position: relative;
+ bottom: 0;
+ width: 100%;
+}
+footer a {
+ color: white; 
+ text-decoration: none;
+}
+
+
+table {
+width: 90%; /* Adjust width as needed */
+height: 100%; /* Adjust height as needed */
+border-collapse: separate;
+border-spacing: 10px; /* Add spacing between cells */
+   }
+td {
+padding: 10px; /* Add padding within cells */
+   }
+td b {
+color: white; /* Change text color of field labels to white */
+  } 
+
+</style>
+
+<script type="text/javascript">
+function validate() {
+  if (reg.n.value == "") {
+    alert("Please enter your name");
+    return false;
+  }
+  if (reg.p.value == "") {
+    alert("Please enter a password");
+    return false;
+  }
+  if (reg.e.value == "") {
+    alert("Please enter your email");
+    return false;
+  }
+  if (reg.contact.value == "") {
+    alert("Please enter your contact number");
+    return false;
+  }
+  if (reg.pincode.value == "" || reg.pincode.value.length !== 6 || isNaN(reg.pincode.value)) {
+    alert("Please enter a valid 6-digit pincode");
+    return false;
+  }
+  if (reg.g[0].checked == false && reg.g[1].checked == false) {
+    alert("Please select a gender");
+    return false;
+  }
+  if (reg.favorite_player.value == "") {
+    alert("Please select a favorite player");
+    return false;
+  }
+
+  return true;
+}
+</script>
+</head>
+<body>
+  <header>
+    <h1>MI Paltan</h1>
+  
+    
+    
+</header>
+
+  <nav>
+    <a href="Home.html">Home</a>
+    <a href="Squad.html">Squad</a>
+    <a href="#">Legacy</a>
+    <a href="stats.html">Stats</a>
+    <a href="merchandise.html">Merchandise</a>
+    <a href="Membership.html">Membership</a>
+    <a href="events.html">Events</a>
+    <a href="ourfans.html">Our Fans</a>
+</nav>
+
+  <center><h2>MI Paltan Recruitment</h2></center>
+  <form name="reg" method="post" onsubmit="return validate()" action="thank_you.html">
+    <table align="center" border="1" bgcolor="#004B8D">
+      <tr>
+        <td><b>Name:</b></td>
+        <td colspan="2"><input type="text" name="n" size="30"></td>
+      </tr>
+      <tr>
+        <td><b>Password:</b></td>
+        <td colspan="2"><input type="password" name="p" size="30"></td>
+      </tr>
+      <tr>
+        <td><b>Email:</b></td>
+        <td colspan="2"><input type="email" name="e" size="30"></td>
+      </tr>
+      <tr>
+        <td><b>Contact No.:</b></td>
+        <td colspan="2"><input type="text" name="contact" size="30"></td>
+      </tr>
+      <tr>
+        <td><b>Pincode:</b></td>
+        <td colspan="2"><input type="text" name="pincode" size="30"></td>
+      </tr>
+      <tr>
+        <td><b>Gender:</b></td>
+        <td><input type="radio" name="g" value="male">Male</td>
+        <td><input type="radio" name="g" value="female">Female</td>
+      </tr>
+      <tr>
+        <td><b>Favorite Player:</b></td>
+        <td colspan="2">
+          <select name="favorite_player">
+            <option value="" selected disabled>Select a favorite player</option>
+            <option value="Rohit Sharma">Rohit Sharma</option>
+            <option value="Jasprit Bumrah">Jasprit Bumrah</option>
+            <option value="Suryakumar">Suryakumar</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3"><center><input type="submit" value="Submit"></center></td>
+      </tr>
+    </table>
+  </form>
+
+  <footer>
+    <a href="stadium.html">Stadium</a><br>
+    <a href="contact_us.html">Contact us</a><br>
+    <a href="https://www.instagram.com/mumbaiindians/">Social Media Accounts</a><br>
+    &copy; 2024 Mumbai Indians Fan Page. All rights reserved.
+</footer>
+</body>
+</html>

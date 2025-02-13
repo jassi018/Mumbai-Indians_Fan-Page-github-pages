@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mumbai Indians Fan Page</title>
+  <link rel="stylesheet" href="template.css">
+  <link rel="stylesheet" href="FAQs.css">
+  <link rel="stylesheet" href="hamburger.css">
+
+  <script src="https://kit.fontawesome.com/c32adfdcda.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <header>
+    <!-- <h1>MI Paltan</h1> -->
+    <a href="index.html"><img src="images/mi_logo-removebg-preview.png" style="height: 100px; margin-right: 20px;"></a>
+    
+    <marquee behavior="scroll" direction="left" scrollamount="8" style="margin-left: px; background-color: #d1ab4e;  width: 100%; height: 30px; align-content: center;">
+      <h3 style="margin: 0;">Stay tuned for live updates on the ongoing cricket matches! Catch every boundary and wicket here.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Join the MI Paltan today and experience the thrill of cricket like never before!</h3>
+  </marquee>
+
+    <a href="Login.html" class="ff">Sign In</a>
+</header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="Squad.html">Squad</a>
+    <a href="legacy.html">Legacy</a>
+    <a href="stat1.html">Stats</a>
+    <a href="merchandise.html">Merchandise</a>
+    <a href="Membership.html">Membership</a>
+    <a href="events.html">Events</a>
+    <a href="ourfans.html">Our Fans</a>
+
+    <div class="off-screen-menu">
+      <div class="off-screen-menu-padding">
+        <div><a href="about_us.html"><img src="images/hamburger/about us.png">About Us</a></div>
+        <hr width="100%">
+        <div><a href="contact_us.html"><img src="images/hamburger/phone.png">Contact Us</a></div>
+        <hr width="100%">
+        <div><a href="FAQs.html"><img src="images/hamburger/faq.png">FAQs</a><br></div>
+        <hr width="100%">
+        <div><a href="go_to_cart.html"><img src="images/hamburger/add-to-shopping-cart.png">Go to cart</a></div>
+        <hr width="100%">
+      </div>
+    </div>
+
+    <div class="ham-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+
+
+
+
+  <h2>FAQs (Frequently Asked Questions)</h2>
+<section id="faqs">
+  <div class="questions">
+    <dl>
+      <dt>What is MI Paltan?</dt>
+      <dd>MI Paltan is a fan page dedicated to the Mumbai Indians cricket team, one of the most successful franchises in the Indian Premier League (IPL). Our website aims to bring together fans of the Mumbai Indians and provide them with the latest news, updates, stats, and merchandise related to the team./dd>
+
+      <dt>Who is behind MI Paltan?</dt>
+      <dd>MI Paltan is created and managed by a group of passionate cricket enthusiasts who are die-hard fans of the Mumbai Indians. We are dedicated to curating content and experiences that celebrate the spirit of the team and its fanbase.</dd>
+
+      <dt>What content can I expect to find on MI Paltan?</dt>
+      <dd>On MI Paltan, you can expect to find a wide range of content related to the Mumbai Indians, including squad information, match schedules, player stats, team legacy, merchandise, membership details, events, and more. We strive to keep our fans informed and engaged with all things Mumbai Indians./dd>
+
+      <dt>How can I get in touch with MI Paltan?</dt>
+      <dd>If you have any questions, feedback, or inquiries, you can reach out to us through our contact us page, where you'll find our address, phone number, email, and a message form. We value communication with our users and are always happy to hear from fellow fans.</dd>
+
+      <dt>Is MI Paltan affiliated with the official Mumbai Indians team?</dt>
+      <dd>No, MI Paltan is an independent fan page created by fans for fans. While we are passionate supporters of the Mumbai Indians, we are not directly affiliated with the official team or the IPL organization. Our website is a platform designed to celebrate the fan community and share our love for the team.</dd>
+
+      <dt>Can I contribute content to MI Paltan?</dt>
+      <dd>Yes! We welcome contributions from fellow fans who are interested in sharing their insights, articles, fan art, or any other content related to the Mumbai Indians. You can reach out to us through our contact page to discuss potential collaborations or submissions.</dd>
+
+      <dt>How often is MI Paltan updated?</dt>
+      <dd>We strive to keep MI Paltan updated regularly with the latest news, match updates, and other relevant content about the Mumbai Indians. Our team works diligently to ensure that our website remains a valuable resource for fans, and we aim to provide fresh content as frequently as possible.</dd>
+    </dl>
+  </div>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <script>
+    $('#faqs dt').click(function() {
+  if ($(this).hasClass('active')) {
+    $(this).removeClass('active');
+    $(this).next().slideUp();
+  } else {
+    $(this).siblings('dt').removeClass('active');
+    $(this).addClass('active');
+    $(this).next().slideDown().siblings('dd').slideUp();
+  }
+});
+  </script>
+
+
+  
+
+  <footer>
+    <a href="stadium.html">Stadium</a><br>
+    <a href="contact_us.html">Contact us</a><br>
+    <a href="https://www.instagram.com/mumbaiindians/">Social Media Accounts</a><br>
+    &copy; 2024 Mumbai Indians Fan Page. All rights reserved.
+  </footer>
+
+  <script src="hamburger.js"></script>
+
+
+
+</body>
+
+</html>

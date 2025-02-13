@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mumbai Indians Fan Page</title>
+    <link rel="stylesheet" href="hamburger.css">
+    <link rel="stylesheet" href="template.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha384-Gs/smIfKkpOhYX2nCw/pWw2Tzsvpc6jem5S/2sV+hC4zZh0o4z+djz0yVC+Qpfqw" crossorigin="anonymous">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: lightblue;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+
+        }
+        .container {
+            background-image: url('images/squad_bg.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+            padding: 20px;
+        }
+
+        .main-content {
+            flex: 1;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar {
+            width: 20%;
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        
+        .ff {
+            color: white;
+            font-family: Arial, sans-serif;
+            background-color: #00205b;
+            padding: 10px;
+            text-decoration: none;
+            position: absolute;
+            top: 40%;
+            transform: translateY(-50%);
+            right: 20px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .ff:hover {
+            background-color: #d1ab4e;
+        }
+
+        nav {
+            background-color: #00205b;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+
+        }
+
+        nav a:hover {
+            color: #ffc107;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #00205b;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            /* margin-top: 20px; */
+
+        }
+        footer a {
+            color: white; /* Change link color to white */
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #ffc107;
+        }
+        .ff{
+            color: white;
+            font-family: Arial, sans-serif;
+            background-color: #00205b;
+            position: absolute;
+            top: 50px;
+            right: 20px;
+            padding: 10px;
+            text-decoration: none;
+        }
+        .player-image {
+            display: block;
+            margin: 0 auto;
+        }
+        .player-card {
+            background-color: rgba(255, 255, 255, 0.3); /* Adjust alpha value for transparency */
+            padding: 15px;
+            margin: 10px;
+            border-radius: 16px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+            width: 200px;
+            text-align: center;
+        }
+    
+    </style>
+</head>
+<body>
+    <header>
+        <!-- <h1>MI Paltan</h1> -->
+        <a href="index.html"><img src="images/mi_logo-removebg-preview.png" style="height: 100px; margin-right: 20px;"></a>
+        
+        <marquee behavior="scroll" direction="left" scrollamount="8" style="margin-left: px; background-color: #d1ab4e;  width: 100%; height: 30px; align-content: center;">
+            <h3 style="margin: 0;">Stay tuned for live updates on the ongoing cricket matches! Catch every boundary and wicket here.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Join the MI Paltan today and experience the thrill of cricket like never before!</h3>
+        </marquee>
+    
+        <a href="Login.html" class="ff">Sign In</a>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="Squad.html">Squad</a>
+        <a href="legacy.html">Legacy</a>
+        <a href="stat1.html">Stats</a>
+        <a href="merchandise.html">Merchandise</a>
+        <a href="Membership.html">Membership</a>
+        <a href="events.html">Events</a>
+        <a href="ourfans.html">Our Fans</a>
+    
+        <div class="off-screen-menu">
+          <div class="off-screen-menu-padding">
+            <div><a href="about_us.html"><img src="images/hamburger/about us.png">About Us</a></div>
+            <hr width="100%">
+            <div><a href="contact_us.html"><img src="images/hamburger/phone.png">Contact Us</a></div>
+            <hr width="100%">
+            <div><a href="FAQs.html"><img src="images/hamburger/faq.png">FAQs</a><br></div>
+            <hr width="100%">
+            <div><a href="go_to_cart.html"><img src="images/hamburger/add-to-shopping-cart.png">Go to cart</a></div>
+            <hr width="100%">
+          </div>
+        </div>
+    
+        <div class="ham-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+    <div class="container">
+        <div class="player-card">
+            <h2>Hardik Pandya (C)</h2>
+            <img src="images/Hp.png" height="200" width="200" class="player-image">
+            <div class="player-details">
+                <p><b>Position</b>: All-rounder</p>
+                <p><b>Nationality</b>: Indian</p>
+                <p><b>IPL debut</b>: 2015</p>
+                <p><b>D.O.B</b>: 11 October 1993</p>
+                <p><b>Matches</b>: 123</p>
+            </div>
+        </div>
+        <!-- Repeat the player-card div for each player -->
+
+        <div class="player-card">
+            <h2>Rohit Sharma</h2>
+            <img src="images/Rs.png" height="200" width="200" class="player-image">
+            <div class="player-details" style="display: none;">
+                <p><b>Position</b>: Batsman</p>
+                <p><b>Nationality</b>: Indian</p>
+                <p><b>IPL debut</b>: 2008</p>
+                <p><b>D.O.B</b>: 30 April 1987</p>
+                <p><b>Matches</b>: 243</p>
+            </div>
+           
+        </div>
+        <div class="player-card">
+            <h2>Jasprit Bumrah</h2>
+            <img src="images/Jb.png" height="200" width="200" class="player-image">
+            <div class="player-details" style="display: none;">
+                <p><b>Position</b>: Bowler</p>
+                <p><b>Nationality</b>: Indian</p>
+                <p><b>IPL debut</b>: 2013</p>
+                <p><b>D.O.B</b>: 06 December 1996</p>
+                <p><b>Matches</b>: 120</p>
+            </div>
+         
+        </div>
+        <div class="player-card">
+            <h2>Dewald Brevis  &#9992; </h2> 
+            <img src="images/Db.png" height="200" width="200" class="player-image">
+            <div class="player-details" style="display: none;">
+                <p><b>Position</b>: Batsman</p>
+                <p><b>Nationality</b>: South African</p>
+                <p><b>IPL debut</b>: 2022</p>
+                <p><b>D.O.B</b>: 29 April 2003</p>
+                <p><b>Matches</b>: 7</p>
+            </div>
+           
+        </div>
+        <div class="player-card">
+            <h2>Suryakumar Yadav</h2>
+            <img src="images/Sy.png" height="200" width="200" class="player-image">
+            <div class="player-details" style="display: none;">
+                <p><b>Position</b>: Batsman</p>
+                <p><b>Nationality</b>: Indian</p>
+                <p><b>IPL debut</b>: 2012</p>
+                <p><b>D.O.B</b>: 14 September 1990</p>
+                <p><b>Matches</b>: 139</p>
+            </div>
+           
+        </div>
+        <div class="player-card">
+            <h2>Ishan Kishan (WK)</h2>
+            <img src="images/Ik.png" height="200" width="200" class="player-image">
+            <div class="player-details" style="display: none;">
+                <p><b>Position</b>: WicketKeeper Batsman</p>
+                <p><b>Nationality</b>: Indian</p>
+                <p><b>IPL debut</b>: 2016</p>
+                <p><b>D.O.B</b>: 18 July 1998</p>
+                <p><b>Matches</b>: 91</p>
+            </div>
+            
+        </div>
+        <div class="player-card">
+            <h2>Arjun Tendulkar</h2>
+            <img src="images/At.png" height="200" width="200" class="player-image">
+            <div class="player-details" style="display: none;">
+                <p><b>Position</b>: All-rounder</p>
+                <p><b>Nationality</b>: Indian</p>
+                <p><b>IPL debut</b>: 2023</p>
+                <p><b>D.O.B</b>: 24 September 1999</p>
+                <p><b>Matches</b>: 4</p>
+            </div>
+            
+        </div>
+        <div class="player-card">
+            <h2>Mohammad Nabi &#9992;</h2>
+            <img src="images/Mn.png" height="200" width="200" class="player-image">
+            <div class="player-details" style="display: none;">
+                <p><b>Position</b>: All-rounder</p>
+                <p><b>Nationality</b>: Afghan</p>
+                <p><b>IPL debut</b>: 2017</p>
+                <p><b>D.O.B</b>: 01 January 1985</p>
+                <p><b>Matches</b>: 17</p>
+            </div>
+            
+        </div>
+        <div class="player-card">
+            <h2>N.Tilak Verma</h2>
+            <img src="images/Ntv.png" height="200" width="200" class="player-image">
+            <div class="player-details" style="display: none;">
+                <p><b>Position</b>: Batsman</p>
+                <p><b>Nationality</b>: Indian</p>
+                <p><b>IPL debut</b>: 2022</p>
+                <p><b>D.O.B</b>: 08 November 2002</p>
+                <p><b>Matches</b>: 25</p>
+            </div>
+           
+        </div>
+        <div class="player-card">
+            <h2>Tim David &#9992;</h2>
+            <img src="images/Td.png" height="200" width="200" class="player-image">
+            <div class="player-details" style="display: none;">
+                <p><b>Position</b>: Batsman</p>
+                <p><b>Nationality</b>: Australian</p>
+                <p><b>IPL debut</b>: 2021</p>
+                <p><b>D.O.B</b>: 16 March 1996</p>
+                <p><b>Matches</b>: 25</p>
+            </div>
+           
+        </div>
+        <div class="player-card">
+            <h2>Romario Shepherd &#9992;</h2>
+            <img src="images/Rsd.png" height="200" width="200" class="player-image">
+            <div class="player-details" style="display: none;">
+                <p><b>Position</b>: All-rounder</p>
+                <p><b>Nationality</b>: West Indien</p>
+                <p><b>IPL debut</b>: 2022</p>
+                <p><b>D.O.B</b>: 26 December 1994</p>
+                <p><b>Matches</b>: 4</p>
+            </div>
+            
+        </div>
+        <div class="player-card">
+            <h2>Kumar Kartikeya Singh</h2>
+            <img src="images/Kks.png" height="200" width="200" class="player-image">
+            <div class="player-details" style="display: none;">
+                <p><b>Position</b>: Bowler</p>
+                <p><b>Nationality</b>: Indian</p>
+                <p><b>IPL debut</b>: 2022</p>
+                <p><b>D.O.B</b>: 26 December 1997</p>
+                <p><b>Matches</b>: 12</p>
+            </div>
+            
+        </div>
+        <div class="player-card">
+            <h2>Piyush Chawla</h2>
+            <img src="images/Pc.png" height="200" width="200" class="player-image">
+            <div class="player-details" style="display: none;">
+                <p><b>Position</b>: Bowler</p>
+                <p><b>Nationality</b>: Indian</p>
+                <p><b>IPL debut</b>: 2008</p>
+                <p><b>D.O.B</b>: 24 December 1998</p>
+                <p><b>Matches</b>: 181</p>
+            </div>
+          
+        </div>
+        <div class="player-card">
+            <h2>Akash Madhwal</h2>
+            <img src="images/Am.png" height="200" width="200" class="player-image">
+            <div class="player-details" style="display: none;">
+                <p><b>Position</b>: Bowler</p>
+                <p><b>Nationality</b>: Indian</p>
+                <p><b>IPL debut</b>: 2023</p>
+                <p><b>D.O.B</b>: 25 November 1993</p>
+                <p><b>Matches</b>: 8</p>
+            </div>
+           
+        </div>
+        <div class="player-card">
+            <h2>Shams Mulani</h2>
+            <img src="images/Sm.png" height="200" width="200" class="player-image">
+            <div class="player-details" style="display: none;">
+                <p><b>Position</b>: All-rounder</p>
+                <p><b>Nationality</b>: Indian</p>
+                <p><b>IPL debut</b>: 2024</p>
+                <p><b>D.O.B</b>: 13 March 1997</p>
+                <p><b>Matches</b>: 0</p>
+            </div>
+            
+        </div>
+        <div class="player-card">
+            <h2>Luke Wood &#9992;</h2>
+            <img src="images/Lw.png" height="200" width="200" class="player-image">
+            <div class="player-details" style="display: none;">
+                <p><b>Position</b>: Bowler</p>
+                <p><b>Nationality</b>: England</p>
+                <p><b>IPL debut</b>: 2024</p>
+                <p><b>D.O.B</b>: 02 Auguts 1995 </p>
+                <p><b>Matches</b>: 0</p>
+            </div>
+            
+        </div>
+        <div class="player-card">
+            <h2>Nehal Wadhera</h2>
+            <img src="images/Nw.png" height="200" width="200" class="player-image">
+            <div class="player-details" style="display: none;">
+                <p><b>Position</b>: All-rounder</p>
+                <p><b>Nationality</b>: Indian</p>
+                <p><b>IPL debut</b>: 2023</p>
+                <p><b>D.O.B</b>: 04 September 2000</p>
+                <p><b>Matches</b>: 14</p>
+            </div>
+            
+        </div>
+        <div class="player-card">
+            <h2>Vishnu Vinod</h2>
+            <img src="images/Vv.png" height="200" width="200" class="player-image">
+            <div class="player-details" style="display: none;">
+                <p><b>Position</b>: WicketKeeper Batsman</p>
+                <p><b>Nationality</b>: Indian</p>
+                <p><b>IPL debut</b>: 2017</p>
+                <p><b>D.O.B</b>: 02 December 1993</p>
+                <p><b>Matches</b>: 6</p>
+            </div>
+            
+        </div>
+        <div class="player-card">
+            <h2>Gerald Coetzee &#9992;</h2>
+            <img src="images/Gc.png" height="200" width="200" class="player-image">
+            <div class="player-details" style="display: none;">
+                <p><b>Position</b>: All-rounder</p>
+                <p><b>Nationality</b>: South African</p>
+                <p><b>IPL debut</b>: 2024</p>
+                <p><b>D.O.B</b>: 02 October 2000</p>
+                <p><b>Matches</b>: 0</p>
+            </div>
+           
+        </div>
+        <div class="player-card">
+            <h2>Dilshan  Madushanka &#9992;</h2>
+            <img src="images/Dm.png" height="200" width="200" class="player-image">
+            <div class="player-details" style="display: none;">
+                <p><b>Position</b>: Bowler</p>
+                <p><b>Nationality</b>: Sri Lanka</p>
+                <p><b>IPL debut</b>: Not Yet</p>
+                <p><b>D.O.B</b>: 18 september 2000</p>
+                <p><b>Matches</b>: 0</p>
+            </div>
+            
+        </div>
+        <div class="player-card">
+            <h2>Shreyas Gopal</h2>
+            <img src="images/Sg.png" height="200" width="200" class="player-image">
+            <div class="player-details" style="display: none;">
+                <p><b>Position</b>: Bowler</p>
+                <p><b>Nationality</b>: Indian</p>
+                <p><b>IPL debut</b>: 2014</p>
+                <p><b>D.O.B</b>: 09 April 1993</p>
+                <p><b>Matches</b>: 49</p>
+            </div>
+            
+        </div>
+        <div class="player-card">
+            <h2>Nuwan Thushara</h2>
+            <img src="images/Nt.png" height="200" width="200" class="player-image">
+            <div class="player-details" style="display: none;">
+                <p><b>Position</b>: Bowler</p>
+                <p><b>Nationality</b>: Sri Lanka</p>
+                <p><b>IPL debut</b>: 2023</p>
+                <p><b>D.O.B</b>: 06 August 1994</p>
+                <p><b>Matches</b>: 0</p>
+            </div>
+            
+        </div>
+        <div class="player-card">
+            <h2>Anshul Kamboj</h2>
+            <img src="images/Ak.png" height="200" width="200" class="player-image">
+            <div class="player-details" style="display: none;">
+                <p><b>Position</b>: All-rounder</p>
+                <p><b>Nationality</b>: Indian</p>
+                <p><b>IPL debut</b>: Not Yet</p>
+                <p><b>D.O.B</b>: 06 December 2000</p>
+                <p><b>Matches</b>: 0</p>
+            </div>
+            
+        </div>
+        <div class="player-card">
+            <h2>Naman Dhir</h2>
+            <img src="images/Nd.png" height="200" width="200" class="player-image">
+            <div class="player-details" style="display: none;">
+                <p><b>Position</b>: All-rounder</p>
+                <p><b>Nationality</b>: Indian</p>
+                <p><b>IPL debut</b>: Not Yet</p>
+                <p><b>D.O.B</b>: 31 December 1999</p>
+                <p><b>Matches</b>: 0</p>
+            </div>
+           
+        </div>
+        <div class="player-card">
+            <h2>Shivalik Sharma</h2>
+            <img src="images/Ss.png" height="200" width="200" class="player-image">
+            <div class="player-details" style="display: none;">
+                <p><b>Position</b>: All-rounder</p>
+                <p><b>Nationality</b>: Indian</p>
+                <p><b>IPL debut</b>: Not yet</p>
+                <p><b>D.O.B</b>: 28 November 1998</p>
+                <p><b>Matches</b>: 0</p>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="hamburger.js"></script>
+
+
+    <footer>
+        <footer>
+            <a href="stadium.html">Stadium</a><br>
+            <a href="contact_us.html">Contact us</a><br>
+            <a href="https://www.instagram.com/mumbaiindians/">Social Media Accounts</a><br>
+            &copy; 2024 Mumbai Indians Fan Page. All rights reserved.
+        </footer>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            // Toggle visibility of player details when clicking on player image
+            $('.player-image').click(function(){
+                $(this).siblings('.player-details').toggle();
+            });
+        });
+    </script>
+</body>
+
+</html>

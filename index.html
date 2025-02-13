@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mumbai Indians Fan Page</title>
+  <link rel="stylesheet" href="template.css"> 
+  <link rel="stylesheet" href="hamburger.css">
+  <link rel="stylesheet" href="news.css">
+  <link rel="stylesheet" href="poll.css">
+  <!-- Link to required libraries (e.g., Swiper CSS) -->
+  <!-- Make sure to include jQuery and Swiper JS libraries -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  
+
+  <style>
+    /* CSS for Video Section */
+    #video-section {
+      height: 100vh;
+      /* Full viewport height */
+      width: 100vw;
+      /* Full viewport width */
+      overflow: hidden;
+      /* Hide overflow content */
+      position: relative;
+
+      /* Set background color to black (#000) */
+
+    }
+
+    .fullscreen-video {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      object-fit: cover;
+      object-position: center;
+      /* Centers the video within the container */
+
+      transform: translate(-50%, -50%);
+    }
+
+  #image-section {
+  position: relative;
+  height: 70vh;
+  width: 100%;
+  overflow-x: hidden;
+  display: flex;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+}
+
+#image-section::before {
+  background-image: url('images/home/mumbai-indians-indian-premier-league-ipl-ipl-2021-cricket-3840x2160-4934.png');
+  background-size: cover;
+  background-position: center;
+  filter: blur(7px);
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  
+  
+}
+
+
+
+   
+
+    #image-track {
+      display:flex;
+      gap: 5vmin;
+      user-select: none;
+      position: relative;
+    }
+
+    #image-track .image {
+      width: 50vmin;
+      height: 50vmin;
+      object-fit: cover;
+      object-position:  100% center;
+      border-radius: 25%;
+
+      transition: transform 0.5s ease;
+    }
+
+    .text-overlay {
+      position: absolute;
+      transform: translate(-300px, 450px);
+      font-size: 24px;
+      color: black;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: black;
+      transition: opacity 0.5s ease;
+    }
+
+    /* CSS for News Section */
+    #news-section {
+      width: 100%;
+      padding: 10px 0;
+      background-color: #f4f4f4;
+    }
+
+    .news-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+
+    /*css for betting*/
+    #bettingOptions {
+        display: flex;
+        justify-content: space-around;
+       }
+
+       .bettingOption h2{
+        margin: 20% 0;
+       }
+    
+      .bettingOption {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin: 10px;
+        width: 200px;
+        text-align: center;
+      }
+
+      .bettingOption img {
+        position: absolute;
+        height: 120px;
+        /* align-self: center; */
+        /* box-shadow: 2px 2px 2px 2px black;  */
+        transform: translate(-50%,-80px);
+      }
+    
+      button {
+        margin-top: 5px;
+      }
+      
+  
+      #cashOutBtn{
+        position: relative;
+        left: 50%;
+        top: 64%;
+      }
+      #displayBet{
+       position: relative;
+       left: 48%;
+       top: 58%;
+      }
+
+    /*  #prob{
+        width: 34%;
+    height: 10px;
+    background-color: #007bff;
+    
+    position: absolute;
+    left: 33%;
+      }*/
+
+      #prob {
+  width: 34%;
+  height: 10px;
+  background-color: #f2f2f2;
+  position: relative;
+  margin: 20px auto;
+  bottom: -25px;
+}
+
+.team1, .team2 {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  line-height: 20px;
+}
+
+.team1 {
+  background-color: #007bff;
+  color: white;
+  left: 0;
+  overflow: hidden;
+  border-radius: 4px 0 0 4px ;
+}
+
+.team2 {
+  background-color: hsl(0, 80%, 46%);
+  color: white;
+  right: 0;
+  overflow: hidden;
+  border-radius: 0 4px 4px 0;
+}
+.percentage {
+  position: absolute;
+  top: -20px; /* Adjust this value to change the distance between the percentages and the probability line */
+  width: 100%;
+}
+
+@font-face {
+    font-family: groot;
+    src: url("C:\\Users\\Sanved\\OneDrive\\Desktop\\WEBD_google drive\\images\\81343247479.jpg");
+}
+
+.goot{
+    background-image: url("images/betting/stadium.jpg");
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+
+}
+
+.b-container {
+            
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-top: 20px;
+            padding: 20px;
+            /* overflow: hidden; Prevent overflow of child elements */
+        }
+
+      
+
+
+
+
+
+
+  </style>
+
+
+</head>
+
+<body>
+  <header>
+    <!-- <h1>MI Paltan</h1> -->
+    <a href="index.html"><img src="images/mi_logo-removebg-preview.png" style="height: 100px; margin-right: 20px;"></a>
+    
+    <marquee behavior="scroll" direction="left" scrollamount="8" style="margin-left: px; background-color: #d1ab4e;  width: 100%; height: 30px; align-content: center;">
+        <h3 style="margin: 0;">Stay tuned for live updates on the ongoing cricket matches! Catch every boundary and wicket here.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Join the MI Paltan today and experience the thrill of cricket like never before!</h3>
+    </marquee>
+
+    <a href="Login.html" class="ff">Sign In</a>
+</header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="Squad.html">Squad</a>
+    <a href="legacy.html">Legacy</a>
+    <a href="stat1.html">Stats</a>
+    <a href="merchandise.html">Merchandise</a>
+    <a href="Membership.html">Membership</a>
+    <a href="events.html">Events</a>
+    <a href="ourfans.html">Our Fans</a>
+
+    <div class="off-screen-menu">
+      <div class="off-screen-menu-padding">
+        <div><a href="about_us.html"><img src="images/hamburger/about us.png">About Us</a></div>
+        <hr width="100%">
+        <div><a href="contact_us.html"><img src="images/hamburger/phone.png">Contact Us</a></div>
+        <hr width="100%">
+        <div><a href="FAQs.html"><img src="images/hamburger/faq.png">FAQs</a><br></div>
+        <hr width="100%">
+        <div><a href="go_to_cart.html"><img src="images/hamburger/add-to-shopping-cart.png">Go to cart</a></div>
+        <hr width="100%">
+        
+      </div>
+    </div>
+
+    <div class="ham-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+
+
+  <section id="video-section">
+    <video autoplay loop  class="fullscreen-video">
+      <source src="videos/mi_anthem.mp4" type="video/mp4">
+    </video>
+  </section>
+
+  <div id="image-section" >
+    <div id="image-track" data-mouse-down-at="0" data-prev-percentage="0">
+      <img class="image" src="images/home/image1.webp" draggable="false" />
+      <div class="text-overlay"></div>
+      <img class="image" src="images/home/image2.webp" draggable="false" />
+      <div class="text-overlay "></div>
+      <img class="image" src="images/home/image3.webp" draggable="false" />
+      <div class="text-overlay "></div>
+      <img class="image" src="images/home/image4.webp" draggable="false" />
+      <div class="text-overlay "></div>
+      <img class="image" src="images/home/image5.jpg" draggable="false" />
+      <div class="text-overlay "></div>
+      <img class="image" src="images/home/image6.jpg" draggable="false" />
+      <div class="text-overlay "></div>
+      <img class="image" src="images/home/image7.jpg" draggable="false" />
+      <div class="text-overlay "></div>
+      <img class="image" src="images/home/image8.jpg" draggable="false" />
+      <div class="text-overlay "></div>
+      <img class="image" src="images/home/image9.jpg" draggable="false" />
+      <div class="text-overlay "></div>
+      <img class="image" src="images/home/image10.jpg" draggable="false" />
+      <div class="text-overlay "></div>
+      
+    </div>
+  </div>
+
+  <!-- news section -->
+
+  
+  <section id="news-section" class="bg-image">
+    <section style="background-color: navy; ;">
+      <h1 class="news-header" style="font-size: xx-large;">Top Stories: </h1>
+      <h3 class="news-header">Your Source for Timely Updates</h3>
+    </section>
+    <!-- <div class="section-title"><h1>Latest news</h1></div> -->
+    <div class="wrapper">
+    
+
+      <div class="news-slider">
+        <div class="news-slider__wrp swiper-wrapper">
+
+
+
+          <div class="news-slider__item swiper-slide">
+
+            <div class="news__item">
+              <div class="news-card">
+
+                <div class="news-date">
+                  <span class="news-date__title">03</span>
+                  <span class="news-date__txt">Nov</span>
+                </div>
+                <div class="news__img">
+                  <img src="images/home/romario_news.webp" alt="news">
+                </div>
+                <div class="news__title">
+                  Romario Shepherd Traded To Mumbai Indians From Lucknow Super Giants
+                </div>
+
+                <p class="news__txt">
+                  Romario Shepherd has been traded to Mumbai Indians (MI) from Lucknow Super Giants (LSG) during the
+                  ongoing TATA
+                  Indian Premier League (IPL) trading window ahead of the TATA IPL 2024.Shepherd, who has played 4 IPL
+                  matches,
+                  representing LSG and Sunrisers Hyderabad, was traded to MI for his existing fee of INR 50
+                  Lakh.<br><br><br><br><br>
+
+                </p>
+
+
+              </div>
+            </div>
+          </div>
+
+          <div class="news-slider__item swiper-slide">
+
+            <div class="news__item">
+              <div class="news-card">
+
+                <div class="news-date">
+                  <span class="news-date__title">15</span>
+                  <span class="news-date__txt">Dec</span>
+                </div>
+                <div class="news__img">
+                  <img src="images/home/hardik news.avif" alt="news">
+                </div>
+                <div class="news__title">
+                  Hardik Pandya named Mumbai Indians captain for IPL 2024, replaces Rohit Sharma
+                </div>
+
+                <p class="news__txt">
+                  In a surprising move, Mumbai Indians (MI) have announced Hardik Pandya as their captain for the
+                  upcoming IPL
+                  2024 season. Pandya, known for his explosive batting and effective bowling, will now lead the
+                  defending
+                  champions in their quest for another title. This decision marks a significant moment in Pandya's
+                  career, as he
+                  takes on the leadership role for one of the most successful franchises in IPL history. Fans are
+                  eagerly awaiting
+                  to see how Pandya will fare as captain and lead MI on the field in the highly anticipated tournament.
+
+                </p>
+
+
+              </div>
+            </div>
+          </div>
+
+          <div class="news-slider__item swiper-slide">
+
+            <div class="news__item">
+              <div class="news-card">
+                <div class="news-date">
+                  <span class="news-date__title">19</span>
+                  <span class="news-date__txt">Dec</span>
+                </div>
+                <div class="news__img">
+                  <img src="images/home/gerald_news.jpeg" alt="news">
+                </div>
+                <div class="news__title">
+                  Gerald Coetzee signed by Mumbai Indians for Rs 5 crore <br><br></div>
+
+                <p class="news__txt">
+                  Mumbai Indians (MI) have bolstered their pace attack ahead of IPL 2024 by including South African fast
+                  bowler
+                  Gerald Coetzee in their squad. Coetzee, known for his raw pace and ability to generate bounce, is
+                  expected to
+                  add depth to MI's bowling lineup. With his impressive performances in domestic and international
+                  cricket,
+                  Coetzee is set to make his mark in the world's premier T20 league under the guidance of MI's
+                  experienced
+                  coaching staff.<br><br><br>
+
+
+                </p>
+
+
+              </div>
+            </div>
+          </div>
+
+
+          <div class="news-slider__item swiper-slide">
+
+            <div class="news__item">
+              <div class="news-card">
+
+                <div class="news-date">
+                  <span class="news-date__title">28</span>
+                  <span class="news-date__txt">Mar</span>
+                </div>
+                <div class="news__img">
+                  <img src="images/home/mi_squad_news.jpeg" alt="news">
+                </div>
+                <div class="news__title">
+                  MI Squad IPL 2024: Complete Mumbai Indians Team and Players
+                </div>
+
+                <p class="news__txt">
+                  In preparation for the upcoming IPL 2024 season, Mumbai Indians (MI) have finalized their squad,
+                  blending experience with promising talent. Led by the dynamic leadership of Hardik Pandya, MI's squad
+                  boasts a formidable lineup, including seasoned campaigners and emerging stars. With the likes of Rohit
+                  Sharma, Jasprit Bumrah, and Kieron Pollard providing stability, the team aims to defend their title
+                  with renewed vigor. Additionally, the inclusion of exciting prospects adds depth to the squad,
+                  ensuring a perfect balance between youth and experience. 
+
+                </p>
+
+
+              </div>
+            </div>
+          </div>
+
+          <div class="news-slider__item swiper-slide">
+
+            <div class="news__item">
+              <div class="news-card">
+
+                <div class="news-date">
+                  <span class="news-date__title">07</span>
+                  <span class="news-date__txt">Apr</span>
+                </div>
+                <div class="news__img">
+                  <img src="images/home/mi_dc_news.jpg" alt="news">
+                </div>
+                <div class="news__title">
+                  MI Beat DC To Register 1st Win Of The Season<br>
+                </div>
+
+                <p class="news__txt">
+                  Good knock from Rohit Sharma, followed by a four-wicket haul from Gerald Coetzee, helped Mumbai
+                  Indians beat
+                  Delhi Capitals by 29 runs in their IPL 2024 match on Sunday. Chasing a whopping target of 235, DC lost
+                  an early
+                  wicket but the partnership between Prithvi Shaw and Abishek Porel kept them in the hunt. However,
+                  Coetzee
+                  scalped four wickets and Jasprit Bumrah scalped two wickets as MI restricted DC to 205/8 and
+                  registered their
+                  first win of the season. For DC, Tristan Stubbs scored 71* while Prithvi Shaw scored 66*. Earlier,
+                  Rohit Sharma
+                  and Tim David scored 49 and 45* runs respectively for MI. (Scorecard)
+
+                </p>
+
+
+              </div>
+            </div>
+          </div>
+
+
+          <div class="news-slider__item swiper-slide">
+
+            <div class="news__item">
+              <div class="news-card">
+
+                <div class="news-date">
+                  <span class="news-date__title">11</span>
+                  <span class="news-date__txt">Apr</span>
+                </div>
+                <div class="news__img">
+                  <img src="images/home/bumrah_news.webp" alt="news">
+                </div>
+                <div class="news__title">
+                  MI vs RCB: Jasprit Bumrah scripts new IPL record after his 2nd 5-wicket haul
+                </div>
+
+                <p class="news__txt">
+                  Jasprit Bumrah continued his incredible form in IPL 2024 as he shone with the ball for MI against RCB
+                  in their
+                  high-octane clash at the Wankhede Stadium on Thursday, April 11. Bumrah picked up a 5-wcket haul,
+                  conceding just
+                  21 runs in his 4-over spell, showcasing once again why is he the best in the business across all
+                  formats of the
+                  game. Bumrah became the first bowler in the IPL history to pick a 5-wicket haul against RCB and only
+                  the 4th man
+                  to pick up more than one 5-wicket haul in the T20 tournament.<br><br>
+
+                </p>
+
+
+              </div>
+            </div>
+          </div>
+
+
+            
+
+
+          <div class="news-slider__item swiper-slide">
+
+            <div class="news__item">
+              <div class="news-card">
+                <div class="news-date">
+                  <span class="news-date__title">13</span>
+                  <span class="news-date__txt">April</span>
+                </div>
+                <div class="news__img">
+                  <img src="images/home/mi_csk.webp" alt="news">
+                </div>
+                <div class="news__title">
+                  MIvCSK: Lots of history, bragging rights, and possible entry into the top four at stake
+                </div>
+                <p class="news__txt">
+                  In the highly anticipated clash between Mumbai Indians (MI) and Chennai Super Kings (CSK), dubbed as
+                  the "El
+                  Clasico" of IPL 2024, MI emerged victorious in a thrilling encounter. Batting first, MI posted a
+                  formidable
+                  total on the board, thanks to stellar performances from their top-order batsmen. However, CSK fought
+                  back
+                  valiantly during their chase, with some explosive batting from their middle order keeping the match in
+                  the
+                  balance till the final overs. In the end, MI's bowlers held their nerve to defend the target and
+                  secure a
+                  crucial win.
+                </p>
+
+
+              </div>
+            </div>
+          </div>
+
+
+
+          
+
+          <div class="news-slider__item swiper-slide">
+
+            <div class="news__item">
+              <div class="news-card">
+              <div class="news-date">
+                <span class="news-date__title">14</span>
+                <span class="news-date__txt">Apr</span>
+              </div>
+
+              <div class="news__img">
+                <img
+                  src="images/home/harvik_desai_news.avif"
+                  alt="news">
+              </div>
+              <div class="news__title">
+                Harvik Desai Named as a Replacement for Vishnu Vinod in MI’s Squad              
+              </div>
+
+              <p class="news__txt">
+                Wicket-keeper batter Vishnu Vinod has been ruled out of the remainder of the IPL 2024 owing to an injury to his forearm. The Mumbai Indians have signed Saurashtra wicket-keeper batter Harvik Desai as a replacement," an IPL statement read.
+                Harvik, 24, has a century in all three formats of the game in the Indian domestic circuit, where he represents Saurashtra as a top-order batter-cum-wicketkeeper. He was a member of the India U19 team that won the Men’s U19 World Cup in New Zealand in 2018
+              </p>
+
+              
+              </div>
+          </div>
+          </div>
+        </div>
+
+        <div class="news-slider__ctr">
+
+          <div class="news-slider__arrows">
+            <button class="news-slider__arrow news-slider-prev">
+              <span class="icon-font">
+                <svg class="icon icon-arrow-left">
+                  <use xlink:href="#icon-arrow-left"></use>
+                </svg>
+              </span>
+            </button>
+            <button class="news-slider__arrow news-slider-next">
+              <span class="icon-font">
+                <svg class="icon icon-arrow-right">
+                  <use xlink:href="#icon-arrow-right"></use>
+                </svg>
+              </span>
+            </button>
+          </div>
+
+          <div class="news-slider__pagination"></div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <svg hidden="hidden">
+      <defs>
+        <symbol id="icon-arrow-left" viewBox="0 0 32 32">
+          <title>arrow-left</title>
+          <path
+            d="M0.704 17.696l9.856 9.856c0.896 0.896 2.432 0.896 3.328 0s0.896-2.432 0-3.328l-5.792-5.856h21.568c1.312 0 2.368-1.056 2.368-2.368s-1.056-2.368-2.368-2.368h-21.568l5.824-5.824c0.896-0.896 0.896-2.432 0-3.328-0.48-0.48-1.088-0.704-1.696-0.704s-1.216 0.224-1.696 0.704l-9.824 9.824c-0.448 0.448-0.704 1.056-0.704 1.696s0.224 1.248 0.704 1.696z">
+          </path>
+        </symbol>
+        <symbol id="icon-arrow-right" viewBox="0 0 32 32">
+          <title>arrow-right</title>
+          <path
+            d="M31.296 14.336l-9.888-9.888c-0.896-0.896-2.432-0.896-3.328 0s-0.896 2.432 0 3.328l5.824 5.856h-21.536c-1.312 0-2.368 1.056-2.368 2.368s1.056 2.368 2.368 2.368h21.568l-5.856 5.824c-0.896 0.896-0.896 2.432 0 3.328 0.48 0.48 1.088 0.704 1.696 0.704s1.216-0.224 1.696-0.704l9.824-9.824c0.448-0.448 0.704-1.056 0.704-1.696s-0.224-1.248-0.704-1.664z">
+          </path>
+        </symbol>
+      </defs>
+    </svg>
+    </div>
+  </section>
+
+
+<div class="poll-container">
+  <h1>MI Fan Zone: Participate in Polls!</h1>
+  <section class="poll-body">
+
+
+    <div class="poll-card">
+			<div class="question">
+				Who will be the highest run scorer for MI in IPL 2024?
+			</div>
+			
+			<div class="options">
+				
+				<div class="option option-1">
+					<div class="analytic">
+						<div class="bar"></div>
+						<div class="percent">50%</div>
+					</div>
+					<div class="input">
+						<input type="radio" id="option-1" name="option-poll-1" hidden>
+						<label for="option-1">Rohit Sharma&nbsp;<i class="fa fa-check tick" aria-hidden="true"></i>
+						</label>
+					</div>
+					
+				</div>
+				
+				<div class="option option-2">
+					<div class="analytic">
+						<div class="bar"></div>
+						<div class="percent">50%</div>
+					</div>
+					<div class="input">
+						<input type="radio" id="option-2" name="option-poll-1" hidden>
+						<label for="option-2">Ishan Kishan&nbsp;<i class="fa fa-check tick" aria-hidden="true"></i></label>
+					</div>
+				</div>
+				
+				<div class="option option-3">
+					<div class="analytic">
+						<div class="bar"></div>
+						<div class="percent">50%</div>
+					</div>
+					<div class="input">
+						<input type="radio" id="option-3" name="option-poll-1" hidden>
+						<label for="option-3">Suryakumar yadav&nbsp;<i class="fa fa-check tick" aria-hidden="true"></i></label>
+					</div>
+				</div>
+				
+				<div class="option option-4">
+					<div class="analytic">
+						<div class="bar"></div>
+						<div class="percent">50%</div>
+					</div>
+					<div class="input">
+						<input type="radio" id="option-4" name="option-poll-1" hidden>
+						<label for="option-4">Tilak Verma&nbsp;<i class="fa fa-check tick" aria-hidden="true"></i></label>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+
+
+    <!-- second poll -->
+    <div class="poll-card">
+			<div class="question">
+				Who will be the highest wicket taker for MI in IPL 2024?
+			</div>
+			
+			<div class="options">
+				
+				<div class="option option-1">
+					<div class="analytic">
+						<div class="bar"></div>
+						<div class="percent">50%</div>
+					</div>
+					<div class="input">
+						<input type="radio" id="option-1" name="option-poll-2" hidden>
+						<label for="option-1">Jasprit Bumrah&nbsp;<i class="fa fa-check tick" aria-hidden="true"></i>
+						</label>
+					</div>
+					
+				</div>
+				
+				<div class="option option-2">
+					<div class="analytic">
+						<div class="bar"></div>
+						<div class="percent">50%</div>
+					</div>
+					<div class="input">
+						<input type="radio" id="option-2" name="option-poll-2" hidden>
+						<label for="option-2">Gerald Coetzee&nbsp;<i class="fa fa-check tick" aria-hidden="true"></i></label>
+					</div>
+				</div>
+				
+				<div class="option option-3">
+					<div class="analytic">
+						<div class="bar"></div>
+						<div class="percent">50%</div>
+					</div>
+					<div class="input">
+						<input type="radio" id="option-3" name="option-poll-2" hidden>
+						<label for="option-3">Piyush Chawla&nbsp;<i class="fa fa-check tick" aria-hidden="true"></i></label>
+					</div>
+				</div>
+				
+				<div class="option option-4">
+					<div class="analytic">
+						<div class="bar"></div>
+						<div class="percent">50%</div>
+					</div>
+					<div class="input">
+						<input type="radio" id="option-4" name="option-poll-2" hidden>
+						<label for="option-4">Akash Madhwal&nbsp;<i class="fa fa-check tick" aria-hidden="true"></i></label>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+    
+
+
+
+        <!-- third poll -->
+
+        <div class="poll-card">
+          <div class="question">
+            Who will hit most number of sixes this season for MI?
+          </div>
+          
+          <div class="options">
+            
+            <div class="option option-1">
+              <div class="analytic">
+                <div class="bar"></div>
+                <div class="percent">50%</div>
+              </div>
+              <div class="input">
+                <input type="radio" id="option-1" name="option-poll-3" hidden>
+                <label for="option-1">Tim david&nbsp;<i class="fa fa-check tick" aria-hidden="true"></i>
+                </label>
+              </div>
+              
+            </div>
+            
+            <div class="option option-2">
+              <div class="analytic">
+                <div class="bar"></div>
+                <div class="percent">50%</div>
+              </div>
+              <div class="input">
+                <input type="radio" id="option-2" name="option-poll-3" hidden>
+                <label for="option-2">Rohit Sharma&nbsp;<i class="fa fa-check tick" aria-hidden="true"></i></label>
+              </div>
+            </div>
+            
+            <div class="option option-3">
+              <div class="analytic">
+                <div class="bar"></div>
+                <div class="percent">50%</div>
+              </div>
+              <div class="input">
+                <input type="radio" id="option-3" name="option-poll-3" hidden>
+                <label for="option-3">Romario Shepherd&nbsp;<i class="fa fa-check tick" aria-hidden="true"></i></label>
+              </div>
+            </div>
+            
+            <div class="option option-4">
+              <div class="analytic">
+                <div class="bar"></div>
+                <div class="percent">50%</div>
+              </div>
+              <div class="input">
+                <input type="radio" id="option-4" name="option-poll-3" hidden>
+                <label for="option-4">Hardik Pandya&nbsp;<i class="fa fa-check tick" aria-hidden="true"></i></label>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+
+        <script src="poll.js"></script>
+        <!-- <script src="poll2.js"></script>
+        <script src="poll3.js"></script> 
+         -->
+	
+  </section> 
+</div>
+
+<section style="background-color: #d1ab4e;">
+
+  <div> 
+    <h1 style="width: 100vw; text-align: center; height: fit-content;">Wanna place a bet on Mumbai Indians, Paltan?</h1>
+    <p style="width: 100vw; text-align: center; height: fit-content; font-size: 20px;">Get a chance now to place a bet on your team and win huge rewards!</p>
+  </div>
+ 
+        <section style="font-family: groot;" class="goot">
+           <h1 style="text-align: center;"> Mumbai Indians vs Royal Challengers Bangalore</h1>
+            <div id="prob" style="border: 3.15px solid black; border-radius: 8px;">
+                <div class="percentage" style="text-align: left;">70%</div>
+                <div class="team1" style="width: 70%;"></div>
+                <div class="percentage" style="text-align: right;">30%</div>
+                <div class="team2" style="width: 30%;"></div>
+              </div>
+              
+            <div class="b-container" >
+            <div id="bettingOptions" >
+                
+                <div id="teamMI" class="bettingOption" style="backdrop-filter: blur(3px); border-radius: 8px;">
+                    <img src="images/betting/MI.png" alt="">
+                    <h2>Mumbai Indians</h2>
+                    <div style="margin-top: 78px;">
+                        <label for="amountMI">Bet Amount:</label>
+                    <input type="number" id="amountMI" min="1">
+                    <button onclick="placeBet('MI')">Place Bet</button>
+                    </div>
+                </div>
+        
+                <div>
+                  <div>  <h1 id="displayBet">Bet placed : 0</h1></div>
+                   <div> <button id="cashOutBtn" onclick="cashOut()">Cash Out</button></div>
+        
+                </div>
+        
+                <div id="teamRCB" class="bettingOption"  style="backdrop-filter: blur(3px); border-radius: 8px;">
+                    <img src="images/betting/RCB.png" alt="">
+                    <h2>Royal Challengers Bangalore</h2>
+                    <label for="amountRCB">Bet Amount:</label>
+                    <input type="number" id="amountRCB" min="1">
+                    <button onclick="placeBet('RCB')">Place Bet</button>
+                </div>
+            </div>
+        </div>
+        </section>
+    </div>
+   
+</div>
+</section>
+
+
+  <footer>
+    <a href="stadium.html">Stadium</a><br>
+    <a href="contact_us.html">Contact us</a><br>
+    <a href="https://www.instagram.com/mumbaiindians/">Social Media Accounts</a><br>
+    &copy; 2024 Mumbai Indians Fan Page. All rights reserved.
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <!-- Your custom JavaScript code -->
+  <script src="new.js"></script>
+  <script src="hamburger.js"></script>
+  <script src="betting.js"></script>
+
+  
+
+  
+</body>
+
+</html>

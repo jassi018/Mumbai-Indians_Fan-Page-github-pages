@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=360, initial-scale=1">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+  <link rel="stylesheet" href="hamburger.css">
+  <link rel="stylesheet" href="template.css">
+
+  <style>
+    :root {
+      --color-white: #f4f4f4;
+      --color-gray-light: #d1d1d1;
+      --color-black: #222;
+      --color-primary: #004BA0;
+      --color-primary-light: #a9d0f5;
+      --color-danger: #d1ab3e;
+      --color-danger-light: #f5b5b5;
+      --min-width: 360px;
+      --max-width: 1200px;
+      --base-font-family: Arial, Helvetica, sans-serif;
+      /* --fancy-font-family: 'Lobster', serif; */
+      --base-padding: 10px;
+      font-size: 12px;
+    }
+
+    body{
+      /* background-color: #79d4fe; */
+      background-color: #E5F3FD;
+    }
+
+    @media screen and (min-width: 600px) {
+      :root {
+        --base-padding: 12px;
+        font-size: 14px;
+      }
+    }
+
+    @media screen and (min-width: 1000px) {
+      :root {
+        --base-padding: 20px;
+        font-size: 16px;
+      }
+    }
+
+    body {
+      margin: 0;
+      min-width: var(--min-width);
+      color: var(--color-black);
+      font-family: var(--base-font-family);
+    }
+
+    /* ----------------- Layout ----------------- */
+
+    .main-container {
+      max-width: var(--max-width);
+      display: grid;
+      grid-gap: var(--base-padding);
+      grid-template-columns: 1fr 3fr;
+      margin: 0 auto;
+      padding: 0 var(--base-padding);
+    }
+
+    @media screen and (min-width: 600px) {
+      .main-container {
+        grid-template-columns: 5fr 6fr
+      }
+    }
+
+    @media screen and (min-width: 1000px) {
+      .main-container {
+        grid-template-columns: 5fr 3fr
+      }
+    }
+
+    .section {
+      display: flex;
+      flex-direction: column;
+      max-height: 100vh;      
+    }
+
+    /* ----------------- Typography ----------------- */
+
+    h1,
+    h2,
+    h3 {
+      font-family: var(--fancy-font-family);
+      font-weight: 400;
+      margin: 1rem auto;
+    }
+
+    p {
+      margin: 1rem auto;
+    }
+
+    .text-center {
+      text-align: center;
+      color: white;
+    }
+
+    /* ----------------- Buttons ----------------- */
+
+    button {
+      font-family: var(--base-font-family);
+      cursor: pointer;
+      font-size: .95rem;
+      border: none;
+    }
+
+    :disabled {
+      opacity: .5;
+      cursor: not-allowed;
+    }
+
+    .btn {
+      padding: .65rem 1rem;
+      transition: .3s all;
+    }
+
+    .btn--small {
+      padding: .2rem .4rem;
+    }
+
+    .btn--primary {
+      color: var(--color-white);
+      background: var(--color-primary);
+    }
+
+    .btn--primary:hover:not(:disabled),
+    .btn--primary:focus {
+      outline: none;
+      box-shadow: 0 0 0 5px var(--color-primary-light);
+    }
+
+    .btn--danger {
+      color: var(--color-white);
+      background: var(--color-danger);
+    }
+
+    .btn--danger:hover:not(:disabled),
+    .btn--danger:focus {
+      outline: none;
+      box-shadow: 0 0 0 5px var(--color-danger-light);
+    }
+
+    /* ----------------- Products ----------------- */
+
+    .products {
+      display: grid;
+      grid-gap: var(--base-padding);
+      overflow: auto;
+    }
+
+    @media screen and (min-width: 600px) {
+      .products {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media screen and (min-width: 1000px) {
+      .products {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .product {
+      text-align: center;
+      padding: var(--base-padding);
+      border: 2px solid var(--color-gray-light);
+      background-color: beige;
+      border-radius: 10px;
+    }
+
+    .product:hover {
+      border-style: dashed;
+    }
+
+    .product__price:before {
+      content: '₹';
+    }
+
+    .product__image {
+      max-width: 65px;
+      transition: .3s all;
+      filter: drop-shadow(0px 0px 0px transparent);
+    }
+
+    @media screen and (min-width: 600px) {
+      .product__image {
+        max-width: 100px;
+      }
+    }
+
+    .product:hover .product__image {
+      animation: .5s shake-product-image;
+    }
+
+    @keyframes shake-product-image {
+      25% {
+        transform: rotate(-10deg);
+      }
+
+      50% {
+        transform: rotate(10deg);
+      }
+
+      75% {
+        transform: rotate(-10deg);
+      }
+
+      100% {
+        transform: rotate(0deg);
+      }
+    }
+
+    /* ----------------- Cart ----------------- */
+
+    .cart {
+      display: grid;
+      grid-gap: var(--base-padding);
+      overflow-x: hidden;
+      overflow-y: auto;
+  
+    }
+
+    .cart h3 {
+      margin: 0;
+    }
+
+    .cart__item {
+      display: grid;
+      grid-template-columns: 2rem 7rem 3rem auto 1rem auto auto;
+      background-color: beige;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+      padding: var(--base-padding);
+      border: 2px solid var(--color-gray-light);
+      animation: .3s add-cart-item;
+    }
+
+    @keyframes add-cart-item {
+      from {
+        margin-left: -200px;
+        margin-right: 200px;
+        opacity: 0;
+      }
+
+      to {
+        margin-left: 0;
+        margin-right: 0;
+        opacity: 1;
+      }
+    }
+
+    .cart__item--removed {
+      animation: .3s remove-cart-item;
+    }
+
+    @keyframes remove-cart-item {
+      to {
+        margin-left: 200px;
+        margin-right: -200px;
+        opacity: 0;
+      }
+    }
+
+    .cart__item__image {
+      max-width: 28px;
+    }
+
+    @media screen and (min-width: 600px) {
+      .cart__item__image {
+        max-width: 38.5px;
+      }
+    }
+
+    .cart__item__price:before {
+      content: '₹';
+    }
+
+    .cart-footer {
+      display: flex;
+      justify-content: space-between;
+      margin-top: var(--base-padding);
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: rgba(255, 255, 255, .7);
+      cursor: wait;
+    }
+
+    .merch-content {
+    flex: 1;
+    background-color: #004BA0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px; /* Add margin-bottom for space between containers */
+
+}
+
+  .cart-section{
+    background-color: #153448;
+  }
+
+    
+  </style>
+
+
+
+
+
+
+
+  <title>Mumbai Indians Fan Page</title>
+</head>
+
+<header>
+  <!-- <h1>MI Paltan</h1> -->
+  <a href="index.html"><img src="images/mi_logo-removebg-preview.png" style="height: 100px; margin-right: 20px;"></a>
+  
+  <marquee behavior="scroll" direction="left" scrollamount="8" style="margin-left: px; background-color: #d1ab4e;  width: 100%; height: 30px; align-content: center;">
+    <h3 style="margin: 0;">Stay tuned for live updates on the ongoing cricket matches! Catch every boundary and wicket here.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Join the MI Paltan today and experience the thrill of cricket like never before!</h3>
+</marquee>
+
+  <a href="Login.html" class="ff">Sign In</a>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="Squad.html">Squad</a>
+  <a href="legacy.html">Legacy</a>
+  <a href="stat1.html">Stats</a>
+  <a href="merchandise.html">Merchandise</a>
+  <a href="Membership.html">Membership</a>
+  <a href="events.html">Events</a>
+  <a href="ourfans.html">Our Fans</a>
+
+  <div class="off-screen-menu">
+    <div class="off-screen-menu-padding">
+      <div><a href="about_us.html"><img src="images/hamburger/about us.png">About Us</a></div>
+      <hr width="100%">
+      <div><a href="contact_us.html"><img src="images/hamburger/phone.png">Contact Us</a></div>
+      <hr width="100%">
+      <div><a href="FAQs.html"><img src="images/hamburger/faq.png">FAQs</a><br></div>
+      <hr width="100%">
+      <div><a href="go_to_cart.html"><img src="images/hamburger/add-to-shopping-cart.png">Go to cart</a></div>
+      <hr width="100%">
+      
+    </div>
+  </div>
+
+  <div class="ham-menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</nav>
+
+
+<body>
+  
+  <h1 ><a href="go_to_cart.html"> <img src="images/Merchandise/bx-cart-add.svg" style="height: 60px; "> </a> </h1>
+  <h1 style="text-align: center; margin-top: -70px;"> MI Fan Store</h1>
+  <p>
+    <h3 style="text-align: center; padding: 40px;">"Shop the MI Collection"<br>
+      Explore our exclusive MI Fan Store, your ultimate destination for official Mumbai Indians merchandise. Discover a wide range of high-quality apparel, accessories, and memorabilia, all crafted with the iconic Mumbai Indians logo and colors. Show your support for the team in style and gear up for the cricket season with authentic MI fan gear!</h3>
+  </p>
+
+      <div class="merch-content">
+        <section class="section">
+          <h2 class="text-center">Badges</h2>
+          <div class="products">
+
+            <div class="product">
+              <img class="product__image" src="images/Merchandise/Badges/bagde1.jpg" alt="Mineral Water">
+              <h2 class="product__name">Mini Hitman Pin</h2>
+              <h3 class="product__price">30</h3>
+              <button class="btn btn--primary" data-action="ADD_TO_CART">Add To Cart</button>
+            </div>
+            <div class="product">
+              <img class="product__image" src="images/Merchandise/Badges/badge5.png" alt="Beer">
+              <h2 class="product__name">Royal Blue Legends Logo</h2>
+              <h3 class="product__price">40</h3>
+              <button class="btn btn--primary" data-action="ADD_TO_CART">Add To Cart</button>
+            </div>
+            <div class="product">
+              <img class="product__image" src="images/Merchandise/Badges/badge2.jpeg" alt="Juice">
+              <h2 class="product__name">Blue Blasters Badge
+              </h2>
+              <h3 class="product__price">50</h3>
+              <button class="btn btn--primary" data-action="ADD_TO_CART">Add To Cart</button>
+            </div>
+            <div class="product">
+              <img class="product__image" src="images/Merchandise/Badges/badge4.jpg" alt="Energy Drink">
+              <h2 class="product__name">Sapphire Strikers Insignia
+              </h2>
+              <h3 class="product__price">60</h3>
+              <button class="btn btn--primary" data-action="ADD_TO_CART">Add To Cart</button>
+            </div>
+
+
+            <div class="product">
+              <img class="product__image" src="images/Merchandise/Badges/badge3.jpeg" alt="Smoothie">
+              <h2 class="product__name">Navy Dominators Badge
+              </h2>
+              <h3 class="product__price">80</h3>
+              <button class="btn btn--primary" data-action="ADD_TO_CART">Add To Cart</button>
+            </div>
+            <div class="product">
+              <img class="product__image" src="images/Merchandise/Badges/badge6.webp" alt="Milk">
+              <h2 class="product__name">Diamond Dynasty Emblem
+              </h2>
+              <h3 class="product__price">150</h3>
+              <button class="btn btn--primary" data-action="ADD_TO_CART">Add To Cart</button>
+            </div>
+        </section>
+      </div>
+    
+  
+
+    <!-- jerseys -->
+        <div class="merch-content">
+          <section class="section">
+            <h2 class="text-center">Jerseys</h2>
+            <div class="products">
+
+              <div class="product">
+                <img class="product__image" src="images/Merchandise/Jersey/jersey1.jpg" alt="Mineral Water">
+                <h2 class="product__name">Midnight Marauder Jersey</h2>
+                <h3 class="product__price">499</h3>
+                <button class="btn btn--primary" data-action="ADD_TO_CART">Add To Cart</button>
+              </div>
+              <div class="product">
+                <img class="product__image" src="images/Merchandise/Jersey/jersey2.jpg" alt="Beer">
+                <h2 class="product__name">Skyline Sentinel Jersey</h2>
+                <h3 class="product__price">499</h3>
+                <button class="btn btn--primary" data-action="ADD_TO_CART">Add To Cart</button>
+              </div>
+              <div class="product">
+                <img class="product__image" src="images/Merchandise/Jersey/jersey3.jpg" alt="Juice">
+                <h2 class="product__name">Golden Gladiator Jersey
+                </h2>
+                <h3 class="product__price">699</h3>
+                <button class="btn btn--primary" data-action="ADD_TO_CART">Add To Cart</button>
+              </div>
+              <div class="product">
+                <img class="product__image" src="images/Merchandise/Jersey/jersey4.jpg" alt="Energy Drink">
+                <h2 class="product__name">Emerald Enigma Jersey</h2>
+                <h3 class="product__price">699</h3>
+                <button class="btn btn--primary" data-action="ADD_TO_CART">Add To Cart</button>
+              </div>
+
+
+              <div class="product">
+                <img class="product__image" src="images/Merchandise/Jersey/jersey5.jpg" alt="Smoothie">
+                <h2 class="product__name">Oceanic Bluewave Jersey
+                </h2>
+                <h3 class="product__price">899</h3>
+                <button class="btn btn--primary" data-action="ADD_TO_CART">Add To Cart</button>
+              </div>
+              <div class="product">
+                <img class="product__image" src="images/Merchandise/Jersey/ersey.jpg" alt="Milk">
+                <h2 class="product__name">Regal Blue Monarch Jersey
+                </h2>
+                <h3 class="product__price">1199</h3>
+                <button class="btn btn--primary" data-action="ADD_TO_CART">Add To Cart</button>
+              </div>
+            </div>
+          </section>
+        </div>
+
+      <!-- Caps -->
+        <div class="merch-content">
+          <section class="section">
+            <h2 class="text-center">Caps</h2>
+            <div class="products">
+
+              <div class="product">
+                <img class="product__image" src="images/Merchandise/caps/cap1.jpg" alt="Mineral Water">
+                <h2 class="product__name">Gold Dynasty Cap</h2>
+                <h3 class="product__price">199</h3>
+                <button class="btn btn--primary" data-action="ADD_TO_CART">Add To Cart</button>
+              </div>
+              <div class="product">
+                <img class="product__image" src="images/Merchandise/caps/cap.jpg" alt="Beer">
+                <h2 class="product__name">Navy Admiral Cap</h2>
+                <h3 class="product__price">199</h3>
+                <button class="btn btn--primary" data-action="ADD_TO_CART">Add To Cart</button>
+              </div>
+              <div class="product">
+                <img class="product__image" src="images/Merchandise/caps/cap2.jpg" alt="Juice">
+                <h2 class="product__name">Sapphire Elite Cap
+                </h2>
+                <h3 class="product__price">299</h3>
+                <button class="btn btn--primary" data-action="ADD_TO_CART">Add To Cart</button>
+              </div>
+              <div class="product">
+                <img class="product__image" src="images/Merchandise/caps/cap4.jpg" alt="Energy Drink">
+                <h2 class="product__name">Wankhede Warrior Cap</h2>
+                <h3 class="product__price">299</h3>
+                <button class="btn btn--primary" data-action="ADD_TO_CART">Add To Cart</button>
+              </div>
+              <div class="product">
+                <img class="product__image" src="images/Merchandise/caps/cap5.jpg" alt="Smoothie">
+                <h2 class="product__name">Emerald Elite Cap
+                </h2>
+                <h3 class="product__price">399</h3>
+                <button class="btn btn--primary" data-action="ADD_TO_CART">Add To Cart</button>
+              </div>
+              <div class="product">
+                <img class="product__image" src="images/Merchandise/caps/cap6.jpg" alt="Milk">
+                <h2 class="product__name">Royal Majesty Cap
+                </h2>
+                <h3 class="product__price">499</h3>
+                <button class="btn btn--primary" data-action="ADD_TO_CART">Add To Cart</button>
+              </div>
+            </div>
+          </section>
+        </div>
+
+
+      <!-- Accessories -->
+        <div class="merch-content">
+          <section class="section">
+            <h2 class="text-center">Accessories</h2>
+            <div class="products">
+
+              <div class="product">
+                <img class="product__image" src="images/Merchandise/Accessories/acc.jpg" alt="Mineral Water">
+                <h2 class="product__name">Blue Blitz Coasters</h2><h3>(Set of 6)</h3>
+                <h3 class="product__price">299</h3>
+                <button class="btn btn--primary" data-action="ADD_TO_CART">Add To Cart</button>
+              </div>
+              <div class="product">
+                <img class="product__image" src="images/Merchandise/Accessories/acc1.jpg" alt="Beer">
+                <h2 class="product__name">Royal Blue Traveler's Satchel</h2>
+                <h3 class="product__price">1999<br><br><br></h3>
+                <button class="btn btn--primary" data-action="ADD_TO_CART">Add To Cart</button>
+              </div>
+              <div class="product">
+                <img class="product__image" src="images/Merchandise/Accessories/acc3.png" alt="Juice">
+                <h2 class="product__name"><br>Mumbai Marvels Mobile Armor
+                </h2>
+                <h3 class="product__price">599 <br><br><br></h3>
+                <button class="btn btn--primary" data-action="ADD_TO_CART">Add To Cart</button>
+              </div>
+              <div class="product">
+                <img class="product__image" src="images/Merchandise/Accessories/acc4.jpg" alt="Energy Drink">
+                <h2 class="product__name">Mumbai Vanguard Backpack</h2>
+                <h3 class="product__price">4999</h3>
+                <button class="btn btn--primary" data-action="ADD_TO_CART">Add To Cart</button>
+              </div>
+              <div class="product">
+                <img class="product__image" src="images/Merchandise/Accessories/acc5.jpg" alt="Smoothie">
+                <h2 class="product__name">Navy Navigator Water Bottle"
+                </h2>
+                <h3 class="product__price">799</h3>
+                <button class="btn btn--primary" data-action="ADD_TO_CART">Add To Cart</button>
+              </div>
+              <div class="product">
+                <img class="product__image" src="images/Merchandise/Accessories/acc6.jpg" alt="Milk">
+                <h2 class="product__name"><br>Royal Blue Brew
+                </h2>
+                <h3 class="product__price">999</h3>
+                <button class="btn btn--primary" data-action="ADD_TO_CART">Add To Cart</button>
+              </div>
+            </div>
+          </section>
+        </div>
+
+
+
+      <section class="cart-section">
+        <h2 class="text-center" ><a href="go_to_cart.html" style="color: white;">My Cart</a></h2>
+        <div class="cart"></div>
+      </section>
+
+
+
+
+  <script src="pageWithProducts.js"></script>
+  <script src="hamburger.js"></script>
+</body>
+
+
+
+
+
+
+<footer>
+  <a href="stadium.html">Stadium</a><br>
+  <a href="contact_us.html">Contact us</a><br>
+  <a href="https://www.instagram.com/mumbaiindians/">Social Media Accounts</a><br>
+  &copy; 2024 Mumbai Indians Fan Page. All rights reserved.
+</footer>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+.off-screen-menu{
+    background-color: #004ba0;
+    width: 90%;
+    max-width: 150px;
+    position: absolute;
+    top: 215px;
+    margin-left: 650px;
+    height: 0px;
+    overflow-y: hidden;
+    visibility: hidden; /* Hide the menu */
+    display: flex;
+    flex-direction:column;
+    justify-content: left;
+    align-items: left;
+    text-align: left;
+    transition: height 0.5s ease;
+    padding: 10px; /* Add padding */
+    border-radius: 5px; /* Add some border-radius for better appearance */
+    z-index: 1000; /* Ensure the menu appears above other elements */ 
+}
+
+.off-screen-menu.active{
+    height: 186px;
+    visibility: visible; /* Make the menu visible */
+    transition: height 0.9s ease, visibility 0s; /* Adjust transition property */
+}
+
+.ham-menu{
+    height: 50px;
+    width: 50px;
+    margin-left: 10px;
+    position: relative;
+    z-index: 1000; /* Ensure the menu appears above other elements */
+
+}
+
+.ham-menu span{
+    height: 4px;
+    width: 75%;
+    background-color: #fff;
+    border-radius: 25px;
+    position: absolute;
+    top: 50%;
+    
+    transform: translate(-50%, -50%);
+    transition: .3s ease;
+}
+
+.ham-menu span:nth-child(1){
+    top: 25%;
+}
+
+.ham-menu span:nth-child(3){
+    top: 75%;
+}
+
+.ham-menu.active span:nth-child(1){
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.ham-menu.active span:nth-child(2){
+    opacity: 0;
+}
+
+.ham-menu.active span:nth-child(3){
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.off-screen-menu-padding{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    align-items: flex-start;
+}
+
+.off-screen-menu-padding div{
+    padding-bottom: 10px; /* Increase padding */
+
+}
+
+.off-screen-menu-padding a {
+    /* display: flex; */
+    align-items: center;
+    text-decoration: none;
+    color: #fff; /* Text color */
+}
+
+.off-screen-menu-padding img{
+    height: 20px; /* Set the same height for all icons */
+    width: 20px; /* Set the same width for all icons */
+    margin-right: 10px; /* Add some space between icon and text */
+}

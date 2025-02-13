@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mumbai Indians Fan Page</title>
+    <link rel="stylesheet" href="template.css">
+    <link rel="stylesheet" href="hamburger.css">
+    <style>
+        /* Your existing CSS styles */
+        
+
+
+        *,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url('images/mi_account_bg.jpg'); /* Specify the path to your background image */
+    background-size: cover; /* Cover the entire background */
+    background-position: center; /* Center the background image */
+}
+
+.wrapper {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1140px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  display: flex;
+  background: #ffffff;
+  box-shadow: 0 0 15px rgba(0, 0, 0, .1);
+}
+
+.credit {
+  position: relative;
+  margin: 25px auto 0 auto;
+  width: 100%;
+  text-align: center;
+  color: #666666;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.credit a {
+  color: #222222;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* * * * * Login Form CSS * * * * */
+h2 {
+  margin: 0 0 15px 0;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+h2 img {
+  width: 120px;
+}
+
+p {
+  margin: 0 0 20px 0;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 22px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 7px 20px;
+  font-size: 16px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  border-radius: 5px;
+  color: #ffffff;
+  outline: none;
+  border: 1px solid #ffffff;
+  transition: .3s;
+  -webkit-transition: .3s;
+}
+
+.btn:hover {
+  color: #004B8D;
+  background: #ffffff;
+}
+
+.col-left,
+.col-right {
+  width: 55%;
+  padding: 45px 35px;
+  display: flex;
+}
+
+.col-left {
+  width: 45%;
+  height: 700px;
+  background: #004B8D;
+  -webkit-clip-path: polygon(98% 17%, 100% 34%, 98% 51%, 100% 68%, 98% 84%, 100% 100%, 0 100%, 0 0, 100% 0);
+  clip-path: polygon(98% 17%, 100% 34%, 98% 51%, 100% 68%, 98% 84%, 100% 100%, 0 100%, 0 0, 100% 0);
+}
+
+@media(max-width: 575.98px) {
+  .container {
+    flex-direction: column;
+    box-shadow: none;
+  }
+
+  .col-left,
+  .col-right {
+    width: 100%;
+    margin: 0;
+    padding: 30px;
+    -webkit-clip-path: none;
+    clip-path: none;
+  }
+}
+
+.login-text {
+  position: relative;
+  width: 100%;
+  color: #ffffff;
+  text-align: center;
+}
+
+.login-form {
+  position: relative;
+  width: 100%;
+  color: #666666;
+}
+
+.login-form p:last-child {
+  margin: 0;
+}
+
+.login-form p a {
+  color: #004B8D;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.login-form p:last-child a:last-child {
+  float: right;
+}
+
+.login-form label {
+  display: block;
+  width: 100%;
+  margin-bottom: 2px;
+  letter-spacing: .5px;
+}
+
+.login-form p:last-child label {
+  width: 60%;
+  float: left;
+}
+
+.login-form label span {
+  color: #ff574e;
+  padding-left: 2px;
+}
+
+.login-form input {
+  display: block;
+  width: 100%;
+  height: 40px;
+  padding: 0 10px;
+  font-size: 16px;
+  letter-spacing: 1px;
+  outline: none;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+}
+
+.login-form input:focus {
+  border-color: #ff574e;
+}
+
+.login-form input.btn {
+  color: #ffffff;
+  background: #d1ab3e;
+  border-color: #d1ab3e;
+  outline: none;
+  cursor: pointer;
+}
+
+.login-form input.btn:hover {
+  color: #004B8D;
+  background: #ffffff;
+}
+    </style>
+</head>
+
+<body>
+  <header>
+    <!-- <h1>MI Paltan</h1> -->
+    <a href="index.html"><img src="images/mi_logo-removebg-preview.png" style="height: 100px; margin-right: 20px;"></a>
+    
+    <marquee behavior="scroll" direction="left" scrollamount="8" style="margin-left: px; background-color: #d1ab4e;  width: 100%; height: 30px; align-content: center;">
+        <h3 style="margin: 0;">Stay tuned for live updates on the ongoing cricket matches! Catch every boundary and wicket here.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Join the MI Paltan today and experience the thrill of cricket like never before!</h3>
+    </marquee>
+    
+    <a href="Login.html" class="ff">Sign In</a>
+</header>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="Squad.html">Squad</a>
+      <a href="legacy.html">Legacy</a>
+      <a href="stat1.html">Stats</a>
+      <a href="merchandise.html">Merchandise</a>
+      <a href="Membership.html">Membership</a>
+      <a href="events.html">Events</a>
+      <a href="ourfans.html">Our Fans</a>
+  
+      <div class="off-screen-menu">
+        <div class="off-screen-menu-padding">
+          <div><a href="about_us.html"><img src="images/hamburger/about us.png">About Us</a></div>
+          <hr width="100%">
+          <div><a href="contact_us.html"><img src="images/hamburger/phone.png">Contact Us</a></div>
+          <hr width="100%">
+          <div><a href="FAQs.html"><img src="images/hamburger/faq.png">FAQs</a><br></div>
+          <hr width="100%">
+          <div><a href="go_to_cart.html"><img src="images/hamburger/add-to-shopping-cart.png">Go to cart</a></div>
+          <hr width="100%">
+      
+        </div>
+      </div>
+  
+      <div class="ham-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+
+    <div class="wrapper">
+      <div class="container">
+        <div class="col-left">
+          <div class="login-text">
+            <h2>MI Paltan Recruitment</h2>
+                <p>
+                  Offical recruitment!!<br>Be an offical fan of MI Paltan
+                </p>
+          </div>
+        </div>
+        <div class="col-right">
+          <div class="login-form">
+            <h2>Create Account</h2>
+            <form action="connect.php" method="post">
+              <p>
+                <input type="text" placeholder="First Name" name="FirstName" required>
+              </p>
+              <p>
+                <input type="text" placeholder="Middle Name" name="MiddleName" required>
+              </p>
+              <p>
+                <input type="text" placeholder="Last Name" name="LastName" required>
+              </p>
+              <p>
+                <input type="email" placeholder="Email-Id" name="EmailId" required>
+              </p>
+              <p>
+                <input type="text" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength = "10" placeholder="ContactNumber" name="ContactNumber" required>
+              </p>
+              <p>
+                <input type="password" placeholder="Set Password" name="SetPassword" required>
+              </p>
+              <p>
+                <input type="text" placeholder="Date of birth" name="DoB" onfocus="(this.type='Date')">
+              </p>
+              
+              <p>
+                <input type="text" placeholder="Favourite MI Player" name="FavouriteMIPlayer" >
+              </p>
+              <p>
+                <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength = "6" placeholder="Pincode" name="Pincode" required>
+              </p>
+              <p>
+                <input class="btn" type="submit" value="Submit" />
+              </p>
+              
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+    <footer>
+        <a href="stadium.html">Stadium</a><br>
+        <a href="contact_us.html">Contact us</a><br>
+        <a href="https://www.instagram.com/mumbaiindians/">Social Media Accounts</a><br>
+        &copy; 2024 Mumbai Indians Fan Page. All rights reserved.
+    </footer>
+
+    <script src="hamburger.js"></script>
+    
+    
+</body>
+    
+    </html>
